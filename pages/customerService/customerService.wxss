@@ -1,0 +1,17 @@
+
+.wcolor {
+  background: #fff
+}
+
+.list {
+  display: flex;
+  height: 98rpx;
+  align-items: center;
+  border-bottom: 1px solid #F3F3F3;
+  justify-content: space-between;
+  margin: 0 28rpx;
+}
+
+.mt20 {
+  margin-top: 20rpx;
+}

@@ -1,0 +1,63 @@
+<view>
+  <form bindsubmit="formSubmit" wx:if="{{!isShow}}">
+    <view class="f19 f_w phone_title">更换绑定手机号</view>
+    <view class="f14 color1 phone_item">
+      <text>当前手机号：</text>
+      <text>{{phone}}</text>
+    </view>
+    <view class="newPhone {{isFocus==1?'active':''}}">
+      <image class="iconImg" src="/images/login/phone.png" />
+      <input class="f16" placeholder="请输入当前手机号" placeholder-class="f16 fcolor1" name="oldPhone" bindinput="mobileInput"
+        bindfocus="focus" data-key="1" />
+    </view>
+    <view class="codeImg_view {{isFocus==2?'active':''}}">
+      <image class='iconImg' src='/images/login/auth_code.png' />
+      <input type="text" id="code" name="codeImg" placeholder-class='fcolor1 f16' bindinput='codeImg' bindfocus="focus"
+        data-key="2" placeholder="请输入图形验证码" maxlength="4" class="codeInput f16" value='{{imgCode}}' />
+      <view bindtap="onTap">
+        <image class="imgCanvas" src="{{url1}}" />
+      </view>
+    </view>
+    <view class="code_view {{isFocus==3?'active':''}}">
+      <image class="iconImg" src="/images/login/auth_code.png" />
+      <input class="codeInput f16" placeholder="请输入验证码" placeholder-class="fcolor1 f16" name="code" bindfocus="focus"
+        data-key="3" />
+      <button class="buttonget bgColor f12" bindtap="verifyCodeEvent"
+        disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+    </view>
+    <button class="btn_our mt" formType="submit">下一步</button>
+  </form>
+
+  <form bindsubmit="formSubmit1" wx:if="{{isShow}}">
+    <view class="f19 f_w phone_title">更换绑定手机号</view>
+    <view class="f14 color1 phone_item">
+      <text>当前手机号：</text>
+      <text>{{phone}}</text>
+    </view>
+    <view class="newPhone {{isFocus==4?'active':''}}">
+      <image class="iconImg" src="/images/login/phone.png" />
+      <input class="f16" placeholder="请输入新手机号" placeholder-class="f16 fcolor1" name="newPhone" bindinput="mobileInput"
+        bindfocus="focus" data-key="4" />
+    </view>
+    <view class="codeImg_view {{isFocus==5?'active':''}}">
+      <image class='iconImg' src='/images/login/auth_code.png' />
+      <input type="text" id="code" name="codeImg" placeholder-class='fcolor1 f16' bindinput='codeImg1' bindfocus="focus"
+        data-key="5" placeholder="请输入图形验证码" maxlength="4" class="codeInput f16 dis" value='{{imgCode1}}' />
+      <view bindtap="onTap1">
+        <image src="{{url2}}" class="imgCanvas" />
+      </view>
+    </view>
+    <view class="code_view {{isFocus==6?'active':''}}">
+      <image class="iconImg" src="/images/login/auth_code.png" />
+      <input class="codeInput f16" placeholder="请输入验证码" placeholder-class="f16" name="code" bindfocus="focus"
+        data-key="6" />
+      <button class="buttonget bgColor f12" bindtap="verifyCodeEvent1"
+        disabled="{{buttonDisable1}}">{{verifyCodeTime1}}</button>
+    </view>
+    <button class="btn_our mt" formType="submit">确认修改</button>
+  </form>
+
+  <view class="f14 fcolor2 explain_tx">
+    更换手机号不会影响当前账户的信息，更换后,可使用新的手机号登录
+  </view>
+</view>

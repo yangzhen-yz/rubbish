@@ -1,0 +1,76 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.top {
+  margin: 17rpx 41rpx 17rpx 34rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1rpx #F4F4F4;
+  padding-bottom: 14rpx;
+}
+
+
+.infoView {
+  margin-left: 30rpx;
+}
+
+.img {
+  width: 66rpx;
+  height: 66rpx;
+}
+
+.askView {
+  margin: 26rpx 34rpx;
+}
+
+.imgView {
+  margin-top: 26rpx;
+}
+
+.img2 {
+  height: 500rpx;
+  width: 100%;
+}
+
+.answer_tx {
+  margin-top: 56rpx;
+  margin-left: 37rpx;
+  padding-bottom: 16rpx;
+  border-bottom: solid 1rpx #F4F4F4;
+}
+
+.answerView {
+  margin: 37rpx;
+}
+
+.answerContent {
+  margin: 37rpx 0;
+}
+
+.fcolor {
+  color: #ACACAC;
+}
+
+.btn {
+  height: 87rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  border-radius: 0rpx;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.btmView {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.swip {
+  height: 500rpx;
+  margin-top: 20rpx
+}

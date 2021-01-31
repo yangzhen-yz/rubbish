@@ -1,0 +1,138 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.top {
+  margin-top: 100rpx;
+}
+
+.logo_img {
+  width: 370rpx;
+  height: 266rpx;
+}
+
+.loginType {
+  margin-top: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  font-size: 34rpx;
+  color: #9A9A9A;
+}
+
+.active {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #47AED3
+}
+
+.left {
+  margin-left: 56rpx;
+}
+
+.right {
+  margin-left: 59rpx;
+}
+
+
+
+
+.content_view {
+  margin: 40rpx 56rpx 0;
+}
+
+.img {
+  width: 54rpx;
+  height: 53rpx;
+}
+
+.login-input {
+  width: 65%;
+  margin-left: 25rpx;
+}
+
+.item_view {
+  display: flex;
+  align-items: center;
+  height: 117rpx;
+  border-bottom: solid 1rpx;
+}
+
+.border {
+  border-color: #C0C8D3;
+}
+
+.border1 {
+  border-color: #47AED3;
+}
+
+.passwordView {
+  justify-content: space-between;
+}
+
+.login_view {
+  margin-top: 88rpx;
+}
+
+.btm_view {
+  margin-top: 35rpx;
+}
+
+.ml {
+  margin-left: 15rpx;
+}
+
+.wx_view {
+  margin-top: 30rpx;
+}
+
+.btn_our1 {
+  width: 650rpx !important;
+  height: 87rpx !important;
+  line-height: 87rpx;
+  border-radius: 44rpx;
+  background-color: #FFFFFF;
+}
+
+.btmView {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wxView {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 18rpx;
+}
+
+.wxImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.btm {
+  margin-top: 80rpx;
+}
+
+.btn1 {
+  border: #FFFFFF;
+  background: #FFFFFF;
+}
+
+.btn1[plain] {
+  border: 0;
+}
+
+
+/* 获取验证码按钮 */
+.buttonget {
+  display: inline-block;
+  color: #fff;
+  border-radius: 10rpx;
+  width: 155rpx !important;
+  height: 61rpx !important;
+  line-height: 61rpx;
+  padding: 0;
+}

@@ -1,0 +1,80 @@
+/* pages/editPhone/editPhone.wxss */
+page {
+  background-color: #fff;
+}
+
+.iconImg {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.phone_title {
+  margin-left: 64rpx;
+  padding-top: 91rpx;
+}
+
+.phone_item {
+  margin-left: 64rpx;
+  margin-top: 6rpx;
+}
+
+.newPhone {
+  display: flex;
+  margin: 0 56rpx;
+  align-items: center;
+  margin-top: 77rpx;
+  padding-bottom: 24rpx;
+  border-bottom: solid 1rpx #C0C8D3;
+}
+
+.fcolor1 {
+  color: #9A9A9A;
+}
+
+.fcolor2 {
+  color: #ACACAC;
+}
+
+.mt {
+  margin-top: 130rpx;
+}
+
+.code_view {
+  display: flex;
+  height: 80rpx;
+  border-bottom: solid 1rpx #C0C8D3;
+  margin: 0 56rpx;
+  padding-top: 45rpx;
+}
+
+.explain_tx {
+  margin: 36rpx 50rpx;
+}
+
+/* 获取验证码按钮 */
+.buttonget {
+  display: inline-block;
+  color: #fff;
+  border-radius: 10rpx;
+  width: 155rpx !important;
+  height: 61rpx !important;
+  line-height: 61rpx;
+  padding: 0;
+}
+
+.codeInput {
+  width: 67%;
+}
+
+.codeImg_view {
+  display: flex;
+  align-items: center;
+  margin: 0 56rpx;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #C0C8D3;
+  padding: 24rpx 0;
+}
+
+.active {
+  border-bottom-color: #47AED3;
+}

@@ -1,0 +1,121 @@
+<view class="main">
+  <view class="top">
+    <view>
+      <image class="img" src="/images/icon/one.png" />
+      <view class="line1 line_color"></view>
+
+      <image class="img1" src="/images/icon/gray_two.png" />
+      <view class="line1 line_color"></view>
+
+      <image class="img1" src="/images/icon/gray_three.png" />
+    </view>
+
+    <view class="process_tx">
+      <text class="f12 color3">资料填写</text>
+      <text class="f12 check_tx">资料审核</text>
+      <text class="f12">完成申请</text>
+    </view>
+  </view>
+  <view class="f13 secret fcolor">资料仅作为审核，绝不外泄</view>
+
+  <form bindsubmit="formSubmit">
+    <view class="content_view">
+      <view class="f15 name_tx">法人姓名</view>
+      <input class="input" placeholder-class="f14 gray_color" placeholder="请输入法人姓名" name="legalPerson"
+        value="{{businessInfo.legal_person}}" />
+      <view class="line2"></view>
+
+      <view class="f15 name_tx">联系人姓名</view>
+      <input class="input" placeholder-class="f14 gray_color" placeholder="请输入联系人姓名" name="contactName"
+        value="{{businessInfo.contacts_name}}" />
+      <view class="line2"></view>
+
+      <view class="f15 name_tx">联系人电话</view>
+      <input class="input" placeholder-class="f14 gray_color" placeholder="请输入法人电话" name="contactPhone" type="number"
+        value="{{businessInfo.contacts_phone}}" />
+      <view class="line2"></view>
+
+      <view class="f15 name_tx">商铺地址</view>
+      <input class="input" placeholder-class="f14 gray_color" placeholder="请输入您的商铺详细地址" name="shopAddress"
+        value="{{businessInfo.address}}" />
+      <view class="line2"></view>
+
+      <view class="imgView">
+        <view>
+          <view class="f15 name_tx picture_view">门头照片</view>
+          <block wx:if="{{isShow}}">
+            <input class="input  picture_input" placeholder-class="f14 gray_color" placeholder="请添加商铺门头照片"
+              disabled="true" />
+          </block>
+        </view>
+
+        <view bindtap="upImg">
+          <image class="camera_img" src="/images/icon/camera.png" wx:if="{{isShow}}" />
+<!-- 
+          <block wx:if="{{businessInfo!=''}}">
+            <image class="camera_img" data-index="{{index}}" src="{{businessInfo.store_pic}}" catchtap="selectImg"
+              wx:if="{{!isShow}}" />
+          </block>
+          <block wx:else> -->
+            <image class="camera_img" src="{{img_arr}}" mode="aspectFit" wx:if="{{!isShow}}" />
+          <!-- </block> -->
+
+          <image class="close" src="/images/type/close.png" catch:tap="delImage" data-img="{{0}}"
+            wx:if="{{!isShow}}" />
+        </view>
+      </view>
+
+      <view class="line2"></view>
+
+      <view class="f14 name_tx">联系人身份证照片</view>
+
+      <view class="idcardView">
+        <view bindtap="upImg1" data-img="1">
+          <image class="license_img" src="/images/icon/idCard_actice.png" wx:if="{{isShow1}}" />
+
+          <!-- <block wx:if="{{businessInfo!=''}}">
+            <image class="license_img" src="{{businessInfo.id_pic_figure}}"  wx:if="{{!isShow1}}" />
+          </block>
+          <block wx:else> -->
+            <image class="license_img" src="{{img_arr1}}" wx:if="{{!isShow1}}" />
+          <!-- </block> -->
+
+          <image class="close1 img3" src="/images/type/close.png" wx:if="{{!isShow1}}" data-img="{{1}}"
+            catch:tap="delImage" />
+        </view>
+
+        <view class="upImg2" bindtap="upImg2" data-url="2">
+          <image class="license_img" src="/images/icon/idCard_against.png" wx:if="{{isShow2}}" />
+
+          <!-- <block wx:if="{{businessInfo!=''}}">
+            <image class="license_img" src="{{businessInfo.id_pic_front}}" wx:if="{{!isShow2}}" />
+          </block>
+          <block wx:else> -->
+            <image class="license_img" src="{{img_arr2}}" wx:if="{{!isShow2}}" />
+          <!-- </block> -->
+
+          <image class="close1 img3" src="/images/type/close.png" wx:if="{{!isShow2}}" data-img="{{2}}"
+            catch:tap="delImage" />
+        </view>
+      </view>
+
+      <view class="f14 name_tx">营业执照副本</view>
+
+      <view bindtap="upImg3">
+        <image class="license_img last_view" src="/images/icon/business_license.png" wx:if="{{isShow3}}" />
+
+        <!-- <block wx:if="{{businessInfo!=''}}">
+          <image class="license_img last_view" src="{{businessInfo.business_license}}" wx:if="{{!isShow3}}" />
+        </block>
+        <block wx:else> -->
+          <image class="license_img last_view" src="{{img_arr3}}" wx:if="{{!isShow3}}" />
+        <!-- </block> -->
+
+        <image class="close1 img3" src="/images/type/close.png" wx:if="{{!isShow3}}" data-img="{{3}}"
+          catch:tap="delImage" />
+      </view>
+    </view>
+
+    <button class="btn bgColor" formType="submit">保存并提交</button>
+  </form>
+</view>

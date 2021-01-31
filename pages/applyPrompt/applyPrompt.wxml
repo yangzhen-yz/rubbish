@@ -1,0 +1,17 @@
+<view class="f20 f_w top">请阅读一下内容</view>
+<view class="f15 ruler">
+  <view>1、申请成为商家后,将以以下价格进行回收</view>
+  <view class="ruler_tx">2、申请成为商家后,账号将成为商家,无法更改</view>
+</view>
+<view class='box2'>
+  <scroll-view class="{{length<7 ? '': scrollView}}" scroll-y="{{scroll_y}}">
+    <block wx:for="{{recycleList}}">
+      <v-new-price list="{{item}}">
+
+      </v-new-price>
+    </block>
+  </scroll-view>
+</view>
+<view class="btm_view" bindtap="toApply">
+  <button class="btn_our">申请成为商家</button>
+</view>

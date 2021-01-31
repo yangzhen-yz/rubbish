@@ -1,0 +1,67 @@
+<view>
+  <image class="img2" src="{{imgUrl}}" />
+</view>
+
+<view class="item_view">
+
+  <view class="number_view">
+    <text class="f15 f_w ">回收机编号：</text>
+    <text class="f16">{{recycleDetail.device_no}}</text>
+  </view>
+
+  <view class="item_title">
+    <block wx:if="{{recycleDetail.community!=null}}">
+      <text class="f17 f_w">{{recycleDetail.community}}</text>
+    </block>
+
+    <block wx:if="{{recycleDetail.distance!=null}}">
+      <text class="f14 color3">{{recycleDetail.distance}}{{recycleDetail.unit}}</text>
+    </block>
+  </view>
+
+  <view class="mid">
+    <view class="left_view">
+      <view class="item_detail">
+        <block wx:if="{{recycleDetail.address!=null}}">
+          <image class="img" src="/images/icon/location.png" />
+          <text class="f13 fcolor1">{{recycleDetail.address}}</text>
+        </block>
+      </view>
+      <view class="item_detail">
+        <block wx:if="{{recycleDetail.operation_time!=null}}">
+          <image class="img" src="/images/icon/time.png" />
+          <text class="f13 fcolor1">{{recycleDetail.operation_time}}</text>
+        </block>
+      </view>
+    </view>
+
+    <!-- <view bindtap="toNavigate" data-long="{{recycleDetail.longitude}}" data-lati="{{recycleDetail.latitude}}">
+      <button class="btn1 bgColor f13">导航</button>
+    </view> -->
+  </view>
+
+  <view>
+    <view class="f15 type_tx">回收种类</view>
+    <view class="type_view">
+      <view wx:for="{{recycleDetail.rubbishTypes}}" class="type_item" wx:for-item="items">
+
+        <!-- <block wx:if="{{items.status==0}}">
+          <view class="f11 status1">正常</view>
+        </block> -->
+
+        <block wx:if="{{items.status==1}}">
+          <view class="f11 status2 bgColor1">溢满</view>
+        </block>
+
+        <block wx:if="{{items.status==2}}">
+          <view class="f11 status3">高温</view>
+        </block>
+
+        <image src="{{items.enable_icon}}" class="icon" />
+        <view class="f14 line-h1">{{items.doorName}}</view>
+        <view class="f13 color7 line-h2">{{items.integral}}积分/{{items.unit}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

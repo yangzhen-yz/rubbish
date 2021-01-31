@@ -1,0 +1,35 @@
+<view class="bg">
+
+  <view class="img_view">
+    <image src="../../images/type/bg.png" mode="widthFix" class="topImg" />
+  </view>
+
+  <view class="content">
+
+    <view class="center fsize f_w">
+      <text>何为{{title}}？</text>
+    </view>
+
+    <view class="des">
+      <image src="{{imgUrl}}" class="img" />
+      <block wx:if="{{wasteDetail.intro!=null}}">
+        <text>{{wasteDetail.intro}}</text>
+      </block>
+    </view>
+
+    <view class="case_list">
+      <view class='item' wx:for="{{wasteDetail.case}}">
+        <image src="{{url}} {{item.pic}}" class="img1" />
+        <text class="f13">{{item.name}}</text>
+      </view>
+    </view>
+
+    <view class='rule'>
+      <view class="rule-title f_w">{{title}}投递规则</view>
+      <!-- <rich-text nodes="{{wasteDetail.rubbishTypeRules}}" type="text" style="text-align: justify"></rich-text> -->
+      <view wx:for="{{wasteDetail.rubbishTypeRules}}" wx:for-index="i" class="ruler_view">
+        <view>{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>

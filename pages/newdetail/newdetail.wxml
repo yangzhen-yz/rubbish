@@ -1,0 +1,9 @@
+<view class='pa'>
+  <!-- <view class='f18 bold line'>{{detaildata.title}}</view>
+  <view class='f14 color5' style='padding-bottom:10px'>{{detaildata.datetime}}</view>
+  
+  <view class='center'><image src='{{detaildata.picture}}'></image></view>
+  <view class='f16' style='text-align:justify;padding-bottom:10px'>{{detaildata.content}}</view> -->
+  
+  <web-view src="{{url}}{{news}}?articleId={{articleId}}"></web-view>
+</view>

@@ -1,0 +1,107 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.top {
+  margin-top: 47rpx;
+}
+
+.pl21 {
+  padding-left: 42rpx;
+}
+
+.withdraw_tx1 {
+  padding-left: 43rpx;
+}
+
+.account_date {
+  margin-top: 23rpx;
+  margin-left: 43rpx;
+}
+
+.line1 {
+  background-color: #EBEBEB;
+  height: 1rpx;
+  margin-top: 51rpx;
+}
+
+.withdraw_plan {
+  display: inline-block;
+  margin-top: 53rpx;
+}
+
+.grayColor {
+  color: #717171;
+}
+
+.img1 {
+  width: 37rpx;
+  height: 37rpx;
+  margin-left: 37rpx;
+  display: block;
+}
+
+.right_view {
+  margin-top: 56rpx;
+  line-height: 37rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 650rpx !important;
+  height: 87rpx !important;
+  line-height: 87rpx;
+  border-radius: 44rpx;
+  color: #FFFFFF;
+  margin-top: 153rpx;
+}
+
+.process_view {
+  display: flex;
+}
+
+.process_item {
+  display: inline-block;
+  margin-left: 25rpx;
+}
+
+.column {
+  height: 84rpx;
+  width: 1rpx;
+  margin-left: 55rpx;
+}
+
+.column1 {
+  height: 84rpx;
+  width: 1rpx;
+  background-color: #E3E3E3;
+  margin-left: 55rpx;
+}
+
+.mtop73 {
+  margin-top: 73rpx;
+}
+
+.f28 {
+  font-size: 56rpx;
+}
+
+.withdraw_view {
+  display: flex;
+  align-items: center;
+  margin-top: 53rpx;
+  padding: 0 60rpx 0 42rpx;
+  justify-content: space-between;
+}
+
+.mtop50 {
+  margin-top: 50rpx;
+}
+
+.left_view{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}

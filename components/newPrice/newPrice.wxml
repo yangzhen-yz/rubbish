@@ -1,0 +1,16 @@
+<view class='priceView f16' wx:for="{{list.children}}" wx:for-item="items">
+
+  <block wx:if="{{items.img_url!=null}}">
+    <view class="goods_view">
+      <image src='{{items.img_url}}' class="goods" />
+    </view>
+  </block>
+
+  <view class="f14 line-h">{{items.rubbish_type}}</view>
+
+  <view class='f13 color7 unit line-h1'>
+    <text class='f13'>
+      <block wx:if="{{items.price!=null}}">{{items.price}}</block>积分/{{items.unit}}
+    </text>
+  </view>
+</view>

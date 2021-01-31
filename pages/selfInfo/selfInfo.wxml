@@ -1,0 +1,59 @@
+<view>
+  <view class="info_view">
+    <text class="f14">头像</text>
+    <block wx:if="{{userInfo.avatar==''}}">
+      <image class="avatarImg" src="/images/user/avatar.png" />
+    </block>
+    <block wx:else>
+      <image class="avatarImg" src="{{userInfo.avatar}}" />
+    </block>
+  </view>
+
+  <view class="info_view1">
+    <text class="f14">昵称</text>
+    <block wx:if="{{userInfo.nickname==''||userInfo.nickname==null}}">
+      <text class="f14">獭獭</text>
+    </block>
+    <block wx:else>
+      <text class="f14">{{userInfo.nickname}}</text>
+    </block>
+  </view>
+
+  <block wx:if="{{userInfo.phone!=''}}">
+    <view class="info_view1">
+      <text class="f14">更换手机号</text>
+      <view bindtap="editPhone">
+        <text class="f14">{{phone}}</text>
+        <image class="right_img" src="/images/user/right.png" />
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="info_view1">
+      <text class="f14">绑定手机号</text>
+      <view bindtap="bindPhone" class="flexView">
+        <text class="f14">去绑定</text>
+        <image class="right_img" src="/images/user/right.png" />
+      </view>
+    </view>
+  </block>
+
+  <view class="info_view1" wx:if="{{!isbindWx}}">
+    <text class="f14">绑定微信号</text>
+    <view bindtap="bindWx" class="flexView f14">
+      <text class="f14">去绑定</text>
+      <image class="right_img" src="/images/user/right.png" />
+    </view>
+  </view>
+
+  <view class="info_view1" wx:if="{{isbindWx}}">
+    <text class="f14">解绑微信号</text>
+    <view bindtap="unbindWx" class="flexView">
+      <text class="f14">去解绑</text>
+      <image class="right_img" src="/images/user/right.png" />
+    </view>
+  </view>
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>

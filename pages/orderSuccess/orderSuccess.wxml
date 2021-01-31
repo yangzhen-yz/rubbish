@@ -1,0 +1,14 @@
+<view class="main">
+  <view class="picture-view">
+    <image class="image" src="/images/icon/business.png" mode="widthFix" />
+  </view>
+  <view class="mid_view f_w">
+    <text class="f20">预约成功</text>
+  </view>
+  <view class="bot_view">
+    <text>请保持<text class="color7">手机畅通</text>,工作人员将在1小时内上门取货，可在预约列表查看预约进度</text>
+  </view>
+  <view bindtap="returnHome">
+    <button class="btn">返回首页</button>
+  </view>
+</view>

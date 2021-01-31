@@ -1,0 +1,48 @@
+<view class="top">
+  <block wx:if="{{userInfo.avatar!=''}}">
+    <image class="img" src="{{userInfo.avatar}}" />
+  </block>
+
+  <block wx:else>
+    <image class="img" src="{{defaultImg}}" />
+  </block>
+
+  <view class="infoView">
+    <block wx:if="{{userInfo.nickname!=''}}">
+      <view class="f13">{{userInfo.nickname}}</view>
+    </block>
+    <block wx:else>
+      <view class="f13">{{defaultName}}</view>
+    </block>
+    <view class="f12">{{feedbackDetail.feedbackTime}}</view>
+  </view>
+</view>
+
+<view class="askView">
+  <view class="f16">{{feedbackDetail.opinion}}</view>
+  <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}"
+    duration="{{duration}}" class="swip">
+    <block wx:for="{{feedbackDetail.imgs}}">
+      <swiper-item>
+        <image class="img2" src="{{item}}" mode="heightFix" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="f15 f_w answer_tx">回复</view>
+
+<view class="answerView">
+  <block wx:if="{{feedbackDetail.reply!=null}}">
+    <view class="f15 answerContent">{{feedbackDetail.reply}}</view>
+  </block>
+
+  <view class="f12 fcolor">
+    <text>回复时间：</text>
+    <text>{{feedbackDetail.replyTime}}</text>
+  </view>
+</view>
+
+<view bindtap="toAdvise" class="btmView">
+  <button class="btn bgColor f16">去提意见</button>
+</view>

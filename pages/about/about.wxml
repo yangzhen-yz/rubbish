@@ -1,0 +1,99 @@
+<view>
+  <map id="map" scale="{{scale}}" markers="{{markers}}" bindmarkertap="markertap" longitude="{{longitude}}"
+    latitude="{{latitude}}" bindcallouttap="bindcallouttap" controls="{{controls}}" show-location
+    style="width: 100%; height: {{view.Height-55}}px;"></map>
+
+  <cover-view class="item_view" wx:if="{{relignList!=''}}">
+    <cover-view class="item_title">
+      <cover-view class="status_view">
+        <cover-view class="f17 f_w">{{relignList.community}}</cover-view>
+
+        <block wx:if="{{relignList.device_status.type==3}}">
+          <cover-view class="f12 state1 color3">离线</cover-view>
+        </block>
+
+        <block wx:if="{{relignList.device_status.type==1}}">
+          <cover-view class="f12 state1 color6">在线</cover-view>
+        </block>
+
+        <block wx:if="{{relignList.device_status.type==2}}">
+          <cover-view class="f12 state1 color8">维护中</cover-view>
+        </block>
+      </cover-view>
+      <cover-view>
+          <cover-view class="f14">{{relignList.distance}}{{relignList.unit}}</cover-view>
+      </cover-view>
+    </cover-view>
+
+    <cover-view class="mid">
+      <cover-view class="left_view">
+        <cover-view class="item_detail">
+          <block wx:if="{{relignList.address!=null}}">
+            <cover-image class="img" src="/images/icon/location.png" mode="scaleToFill" />
+            <cover-view class="f13 fcolor1 pl5">{{relignList.address}}</cover-view>
+          </block>
+        </cover-view>
+        <cover-view class="item_detail">
+          <block wx:if="{{relignList.operation_time!=null}}">
+            <cover-image class="img" src="/images/icon/time.png" />
+            <cover-view class=" f13 fcolor1 pl5">{{relignList.operation_time}}</cover-view>
+          </block>
+        </cover-view>
+      </cover-view>
+
+      <cover-view bindtap="toLocation" data-long="{{relignList.longitude}}" data-lati="{{relignList.latitude}}">
+        <button class="btn1 bgColor f13">导航</button>
+      </cover-view>
+    </cover-view>
+
+    <cover-view class="more_view" wx:if="{{!isShow}}" bindtap="unfold">
+      <cover-image class="downImg" src="/images/icon/down.png" />
+    </cover-view>
+
+    <cover-view wx:if="{{isShow}}">
+      <cover-view class="type_view1">
+        <cover-view wx:for="{{recycleList}}" class="type_item">
+
+          <!-- <block wx:if="{{item.status==0}}">
+            <cover-view class="f11 status1">正常</cover-view>
+          </block> -->
+          <block wx:if="{{item.status==1}}">
+            <cover-view class="f11 status2">溢满</cover-view>
+          </block>
+          <block wx:if="{{item.status==2}}">
+            <cover-view class="f11 status3">高温</cover-view>
+          </block>
+
+          <cover-image src="{{item.enable_icon}}" class="icon" />
+          <cover-view class="f14 line-h">{{item.doorName}}</cover-view>
+          <cover-view class="f13  color7 line-h1">{{item.integral}}积分/{{item.unit}}</cover-view>
+        </cover-view>
+      </cover-view>
+
+      <cover-view class="less_view" bindtap="fold">
+        <cover-image class="downImg" src="/images/icon/up.png" />
+      </cover-view>
+    </cover-view>
+  </cover-view>
+
+  <cover-view class="item_view" wx:else>
+    <cover-view class="noData f15">附近暂无回收机</cover-view>
+  </cover-view>
+
+  <cover-view class="mode_view" bindtap="listType">
+    <button class="btn3 bgColor f14">列表模式</button>
+  </cover-view>
+
+  <view class="tabbar_box"
+    style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}}">
+    <block wx:for="{{tabbar.list}}" wx:for-item="item" wx:key="index">
+      <navigator class="tabbar_nav" url="{{item.pagePath}}"
+        style="width:{{1/tabbar.list.length*100}}%; color:{{item.selected ? tabbar.selectedColor : tabbar.color}}"
+        open-type="redirect" hover-class="none">
+        <image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}" />
+        <text>{{item.text}}</text>
+      </navigator>
+    </block>
+  </view>
+
+</view>

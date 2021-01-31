@@ -1,0 +1,61 @@
+<form bindsubmit="toSubmit">
+  <view class="f15">
+    <view class="item_view">
+      <text class="item_tx">姓名：</text>
+      <input placeholder="请输入您的称呼" placeholder-class="f15" class="input1" name="name" value="{{selfInfo.name}}" />
+    </view>
+    <view class="item_view">
+      <text class="item_tx">性别：</text>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label>
+          <radio name="sex" value="0" checked="{{selfInfo.sex=='1'?true:false}}" class="radio0"
+            disabled="{{item.disabled}}" /><text> 男 </text>
+        </label>
+        <label>
+          <radio name="sex" value="1" checked="{{selfInfo.sex=='2'?true:false}}" class="radio0 pl50"
+            disabled="{{item.disabled}}" /><text> 女 </text>
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="item_view">
+      <text class="item_tx">年龄：</text>
+      <input placeholder="请输入您的年龄" placeholder-class="f15" class="input1" name="age" value="{{selfInfo.age}}" />
+    </view>
+
+    <view class="item_view">
+      <text class="item_tx">小区：</text>
+      <picker class="picker" bindchange="bindPickerChange" value="{{index}}" range="{{communityList}}"
+        range-key="community">
+        <block wx:if="{{selfInfo.community.id==null}}">
+          <input value="{{communityList[index].id}}" class="inpt" name="communityId" hidden="true" />
+          <input placeholder="请点击选择所居住的小区" placeholder-class="f15" class="placeInput" name="community"
+            value="{{communityList[index].community}}" disabled="true" />
+        </block>
+        <block wx:else>
+
+          <block wx:if="{{index==''}}">
+            <input value="{{selfInfo.community.id}}" class="inpt" name="communityId" hidden="true" />
+            <input placeholder="请点击选择所居住的小区" placeholder-class="f15" class="placeInput" name="community"
+              value="{{selfInfo.community.name}}" disabled="true" />
+          </block>
+          <block wx:else>
+            <input value="{{communityList[index].id}}" class="inpt" name="communityId" hidden="true" />
+            <input placeholder="请点击选择所居住的小区" placeholder-class="f15" class="placeInput" name="community"
+              value="{{communityList[index].community}}" disabled="true" />
+          </block>
+        </block>
+      </picker>
+    </view>
+    <view class="item_view">
+      <text class="item_tx">住址：</text>
+      <input class="input" name="tower" placeholder-class="pl10" value="{{selfInfo.address1}}" />
+      <text>号楼</text>
+      <input class="input" name="units" placeholder-class="pl10" value="{{selfInfo.address2}}" />
+      <text>单元</text>
+      <input class="input" name="door" placeholder-class="pl10" value="{{selfInfo.address3}}" />
+      <text>门牌号</text>
+    </view>
+    <button class="btn_our mt" formType="submit">立即提交</button>
+  </view>
+</form>

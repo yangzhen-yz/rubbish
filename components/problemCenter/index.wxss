@@ -1,0 +1,11 @@
+.askView {
+  margin: 0 33rpx;
+  padding: 24rpx 0rpx;
+  border-bottom: solid 1rpx #F4F4F4;
+}
+
+.answerView {
+  line-height: 43rpx;
+  margin: 0 33rpx;
+}
+

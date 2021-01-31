@@ -1,0 +1,5 @@
+/* pages/newdetail/newdetail.wxss */
+page{
+  width: 100%;
+  overflow-x:hidden 
+}

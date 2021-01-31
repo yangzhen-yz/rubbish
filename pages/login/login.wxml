@@ -1,0 +1,99 @@
+<view class='center top'>
+	<image class='logo_img' src='/images/login/logo.png' mode="widthFix" />
+</view>
+
+<view class="loginType">
+	<view class="{{currentTab==0? 'active':'item'}} left" data-current="0" bindtap="switchTab">账号登录</view>
+	<view class="{{currentTab==1? 'active':'item'}} right" data-current="1" bindtap="switchTab">验证码登录</view>
+</view>
+
+<block wx:if="{{currentTab==0}}">
+	<view class="content_view">
+		<form bindsubmit="formSubmit">
+			<view class="item_view {{isFocus==1 ? 'border1':'border'}}">
+				<image src='/images/login/phone.png' class='img' />
+				<input cursor-spacing="150" name="phone" placeholder-class="phcolor" class="login-input f16 dis" type="number"
+					data-key="1" placeholder="请输入手机号" bindfocus="focus" />
+			</view>
+			<view class="item_view {{isFocus==2 ? 'border1':'border'}} passwordView">
+				<view class="flexView">
+					<image src='/images/login/password.png' class='img' />
+					<input cursor-spacing="150" name="password" placeholder-class="phcolor" class="login-input f16 dis"
+						type="input" data-key="2" placeholder="请输入密码" password="{{isShow}}" bindfocus="focus" />
+				</view>
+
+				<v-icon icon="eyes-off" color="black" size="{{25}}" bindtap="eyesOpen" wx:if="{{isShow}}" />
+				<v-icon icon="eyes-on" color="black" size="{{25}}" bindtap="eyesClose" wx:if="{{!isShow}}" />
+			</view>
+			<view class="login_view">
+				<button class="btn_our f16" formType="submit">
+					立即登录
+				</button>
+			</view>
+		</form>
+
+		<view class="btmView">
+			<navigator hover-class="none" url="../register/register" open-type="redirect">
+				<view class='color f16  btm_view'>注册账号</view>
+			</navigator>
+			<navigator hover-class="none" url="../forgetpwd/forgetpwd" open-type="redirect">
+				<view class='color f16 btm_view'>忘记密码?</view>
+			</navigator>
+		</view>
+	</view>
+</block>
+
+<block wx:if="{{currentTab==1}}">
+	<view class="content_view">
+		<form bindsubmit="formSubmit1">
+			<view class="item_view {{isFocus1==3 ? 'border1':'border'}}">
+				<image src='/images/login/phone.png' class='img' />
+				<input cursor-spacing="150" name="phone" placeholder-class="phcolor" class="login-input f16 dis" type="number"
+					data-key="3" placeholder="请输入手机号" bindfocus="focus1" bindinput="mobileInputEvent"/>
+			</view>
+
+			<view class="item_view {{isFocus1==4 ?'border1':'border'}}">
+				<image src='/images/login/auth_code.png' class='img' />
+				<input type="text" name="codeImg" placeholder-class='phcolor' bindinput='codeImg' maxlength="4"
+					placeholder="请输入图形验证码" class="login-input f16 dis" value='{{imgCode}}' data-key="4" bindfocus="focus1" />
+				<view bindtap="onTap">
+					<image src="{{codeUrl}}" class="imgCanvas" />
+				</view>
+			</view>
+
+			<view class="item_view {{isFocus1==5 ?'border1':'border'}}">
+				<image src='/images/login/auth_code.png' class='img' />
+				<input type="text" cursor-spacing="150" name="code" placeholder-class="phcolor" data-key="5" bindfocus="focus1"
+					class="login-input f16 dis" placeholder="请输入验证码" />
+				<button class="buttonget bgColor f12" bindtap="verifyCodeEvent"
+					disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+			</view>
+
+			<view class="login_view">
+				<button class="btn_our f16" formType="submit">
+					立即登录
+				</button>
+			</view>
+		</form>
+
+		<view class="btmView">
+			<navigator hover-class="none" url="../register/register" open-type="redirect">
+				<view class='color f16  btm_view'>注册账号</view>
+			</navigator>
+			<navigator hover-class="none" url="../forgetpwd/forgetpwd" open-type="redirect">
+				<view class='color f16 btm_view'>忘记密码?</view>
+			</navigator>
+		</view>
+	</view>
+</block>
+
+<view class="btm">
+	<label>
+		<view class="wxView">
+			<image src="/images/login/wxLogo.png" class="wxImg" />
+		</view>
+		<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" lang="zh_CN" class="btn1 f14" plain="true">
+			使用微信快速登录
+		</button>
+	</label>
+</view>

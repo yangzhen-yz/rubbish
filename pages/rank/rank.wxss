@@ -1,0 +1,111 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.main {
+  height: 350rpx;
+}
+
+.bgImg {
+  width: 100%;
+  height: 100%;
+}
+
+.tab-h {
+  background-color: #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tab-item {
+  padding: 15rpx 0;
+}
+
+.content {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  padding-bottom: 28rpx;
+}
+
+.title_view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20rpx;
+  padding: 25rpx 0;
+  border-bottom: solid 1rpx #EEEEEE;
+}
+
+.score_tx {
+  display: flex;
+  align-items: center;
+}
+
+.img1 {
+  width: 35rpx;
+  height: 35rpx
+}
+
+.img2 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.f21 {
+  font-size: 42rpx;
+}
+
+.f22 {
+  font-size: 40rpx;
+}
+
+.f24 {
+  font-size: 48rpx;
+}
+
+.item_view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30rpx;
+  padding: 30rpx 0;
+  border-bottom: solid 1rpx #eeeeee;
+}
+
+.left_view {
+  display: flex;
+  align-items: center;
+}
+
+.info_view {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.pl20 {
+  padding-left: 20rpx;
+}
+
+.scrollView {
+  height: 850rpx;
+  margin-top: 20rpx;
+}
+
+.noImg {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.other {
+  width: 40rpx;
+}
+
+.active {
+  color: #111111;
+  font-weight: bold;
+  border-bottom: solid #47AED3;
+}

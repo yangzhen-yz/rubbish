@@ -1,0 +1,54 @@
+/* pages/editpwd/editpwd.wxss */
+.field {
+  background-color: #FFFFFF;
+  height: 98rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.btn_our {
+  width: 650rpx !important;
+  height: 87rpx !important;
+  line-height: 87rpx;
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  margin-top: 129rpx;
+}
+
+.tx {
+  margin-left: 28rpx;
+}
+
+.login_input {
+  width: 55%;
+  display: inline-block;
+  margin-left: 12%;
+}
+
+.login_input1 {
+  width: 55%;
+  display: inline-block;
+  margin-left: 4%;
+}
+
+.show_img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.ml {
+  margin-left: 24rpx;
+}
+
+.fcolor {
+  color: #7B7B7B
+}
+
+.btmView {
+  margin-top: 37rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50rpx;
+}

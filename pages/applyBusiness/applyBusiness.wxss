@@ -1,0 +1,148 @@
+page {
+  background-color: #f5f5f5;
+}
+
+.top {
+  background-color: #fff;
+  margin-top: 21rpx;
+}
+
+.line1 {
+  display: inline-block;
+  vertical-align: super;
+  width: 189rpx;
+  height: 2rpx;
+}
+
+.img {
+  margin-left: 122rpx;
+  margin-top: 33rpx;
+  width: 37rpx;
+  height: 37rpx;
+}
+
+.img1 {
+  width: 37rpx;
+  height: 37rpx;
+}
+
+.line_color {
+  background-color: #D2D2D2;
+}
+
+.fcolor {
+  color: #ACACAC;
+}
+
+.process_tx {
+  padding: 0 95rpx 32rpx;
+}
+
+.check_tx {
+  padding: 0 126rpx;
+}
+
+.secret {
+  margin: 22rpx 0 21rpx 41rpx;
+}
+
+.name_tx {
+  margin-left: 41rpx;
+  padding-top: 33rpx;
+}
+
+.content_view {
+  background-color: #fff;
+  margin-bottom: 134rpx;
+}
+
+.input {
+  margin-left: 41rpx;
+  margin-top: 16rpx;
+}
+
+.line2 {
+  margin: 32rpx 41rpx auto 41rpx;
+  height: 2rpx;
+  background-color: #CECECE;
+}
+
+.gray_color {
+  color: #868686
+}
+
+.picture_view {
+  display: inline-block;
+}
+
+.camera_img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 31rpx;
+  margin-right: 60rpx;
+}
+
+.picture_input {
+  width: 70%;
+}
+
+.license_img {
+  width: 320rpx;
+  height: 170rpx;
+  margin-left: 43rpx;
+  margin-top: 18rpx;
+}
+
+.btn {
+  width: 100%;
+  height: 87rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  line-height: 87rpx;
+  position: absolute;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.last_view {
+  margin-bottom: 91rpx;
+}
+
+.imgView {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img_view {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 28rpx;
+}
+
+.thumb {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.close {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  margin-top: 21rpx;
+  margin-left: -80rpx;
+}
+
+.idcardView {
+  display: flex;
+}
+
+.img3 {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.close1 {
+  position: absolute;
+  margin-left: -15rpx;
+  margin-top: 5rpx;
+}

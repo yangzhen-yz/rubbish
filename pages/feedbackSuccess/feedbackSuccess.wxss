@@ -1,0 +1,7 @@
+.btn {
+  width: 30%;
+  color: #fff;
+  line-height: 2.4;
+  border-radius: 40rpx;
+  margin-top: 40rpx
+}

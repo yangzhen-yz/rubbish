@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "忘记密码",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "v-icon": "/components/icon/icon"
+
+ }
+}

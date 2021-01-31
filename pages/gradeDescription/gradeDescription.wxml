@@ -1,0 +1,27 @@
+<view class='main'>
+  <view class="f18 f_w grade_order">会员等级规则</view>
+
+  <view class='f15 grade_growth'>
+    <text class='co1'></text>等级成长
+  </view>
+
+  <view class='fsize item_view'>
+    <view class='dis center th f_w ml opy'>会员等级</view>
+    <view class='dis center th f_w opy'>积分</view>
+
+    <view class='dis center th f_w ml opy'>会员等级</view>
+    <view class='dis center th f_w opy'>积分</view>
+
+    <scroll-view class="scrollview" scroll-y="{{scroll_y}}">
+      <block wx:for="{{userLevels}}" wx:for-item="item" wx:key="item.id">
+        <view class='dis center th th1 ml'>{{item.name}}</view>
+        <view class='dis center th th1 '>{{item.integral}}</view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class='f16 line list' wx:for="{{levelIntroduction}}">
+    <text class='co'></text> {{item.question}}
+    <view class='f14 line2 answer_tx'>{{item.answer}}</view>
+  </view>
+</view>

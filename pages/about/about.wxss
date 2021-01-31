@@ -1,0 +1,149 @@
+.btn3 {
+  width: 170rpx !important;
+  height: 60rpx !important;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  color: #FFFFFF;
+}
+
+.mode_view {
+  position: absolute;
+  top: 58rpx;
+  right: 9rpx;
+}
+
+.item_view {
+  margin: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 20rpx;
+  position: absolute;
+  bottom: 130rpx;
+  width: 94.4%;
+}
+
+.item_title {
+  display: flex;
+  margin: 0 26rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15rpx;
+}
+
+.mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 17rpx 24rpx 0rpx;
+}
+
+.left_view {
+  margin-bottom: 17rpx;
+  width: 80%;
+}
+
+.item_detail {
+  display: flex;
+  align-items: center;
+  margin-top: 7rpx;
+}
+
+.img_view {
+  width: 8%;
+}
+
+.img {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.fcolor1 {
+  color: #ACACAC;
+}
+
+.img1 {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.btn1 {
+  width: 95rpx !important;
+  height: 43rpx !important;
+  line-height: 43rpx;
+  border-radius: 100rpx;
+  color: #FFFFFF;
+  padding: 0;
+}
+
+.more_view {
+  /* padding-top: 16rpx; */
+  display: flex;
+  justify-content: center;
+  margin:16rpx 0
+}
+
+.downImg {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.type_tx {
+  margin-top: 36.5rpx;
+  margin-left: 57rpx;
+}
+
+.type_view1 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, rgba(30, 146, 213, 0.14) 0%, rgba(255, 255, 255, 0) 100%);
+  padding-top: 8rpx;
+}
+
+.type_item {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 20rpx;
+  margin-top: 20rpx;
+}
+
+.icon {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.less_view {
+  margin-top: 21rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.pl5 {
+  padding-left: 5rpx;
+  word-break: break-all;
+  white-space: pre-line;
+}
+
+.state1 {
+  display: flex;
+  margin-left: 20rpx;
+  border-radius: 24rpx;
+  justify-content: center;
+  align-items: center;
+  padding: 5rpx 15rpx;
+  border: solid 1rpx;
+}
+
+.status_view {
+  display: flex;
+  align-items: center;
+}
+
+.noData{
+  padding: 20rpx 0;
+  text-align: center;
+}

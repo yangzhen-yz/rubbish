@@ -1,0 +1,66 @@
+/* pages/businessInfo/businessInfo.wxss */
+.shop_img {
+  width: 113rpx;
+  height: 113rpx;
+}
+
+.item_view {
+  display: flex;
+  align-items: center;
+  height: 145rpx;
+  margin-top: 20rpx;
+  background-color: #FFFFFF;
+  border-bottom: solid 1rpx #F5F5F5;
+  padding: 0 27rpx;
+  justify-content: space-between;
+}
+
+.item_view1 {
+  display: flex;
+  align-items: center;
+  height: 117rpx;
+  background-color: #FFFFFF;
+  border-bottom: solid 1rpx #F5F5F5;
+  padding: 0 27rpx;
+  justify-content: space-between;
+}
+
+.item_view3 {
+  background-color: #FFFFFF;
+  border-bottom: solid 1rpx #F5F5F5;
+  padding: 33rpx 27rpx 0 27rpx;
+}
+
+.img {
+  width: 333rpx;
+  height: 180rpx;
+}
+
+.pl30 {
+  padding-left: 30rpx;
+}
+
+.img_view {
+  margin-top: 18rpx;
+}
+
+.pb {
+  padding-bottom: 91rpx;
+}
+
+.address_tx {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  text-align: right;
+}
+
+.status{
+  display: flex;
+  height: 70rpx;
+  background: #47AED3;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+}

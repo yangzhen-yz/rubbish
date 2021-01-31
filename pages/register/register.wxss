@@ -1,0 +1,66 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.mt {
+  margin-top: 112rpx;
+}
+
+.logo_img {
+  width: 369rpx;
+  height: 266rpx;
+}
+
+.content_view {
+  margin: 0 55rpx;
+}
+
+.mar11 {
+  margin-top: 10%
+}
+
+.img {
+  width: 54rpx;
+  height: 53rpx;
+}
+
+.item_view {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #C0C8D3;
+  height: 117rpx;
+}
+
+.active {
+  border-bottom-color: #47AED3;
+}
+
+.login-input {
+  width: 75%;
+  margin-left: 25rpx;
+}
+
+.btm_view {
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.register_view {
+  margin-top: 85rpx;
+}
+
+/* 获取验证码按钮 */
+.buttonget {
+  display: inline-block;
+  color: #fff;
+  border-radius: 10rpx;
+  width: 155rpx !important;
+  height: 61rpx !important;
+  line-height: 61rpx;
+  padding: 0;
+}
+
+.imgCanvas {
+  width: 150rpx;
+  height: 65rpx;
+}

@@ -1,0 +1,52 @@
+<view class='center mt'>
+  <image class='logo_img' src='/images/login/logo.png' />
+</view>
+
+<view class="content_view">
+  <form bindsubmit="formSubmit">
+    <view class="mar11 item_view {{isFocus==1?'active':''}}">
+      <image src='/images/login/phone.png' class='img' />
+      <input type="text" cursor-spacing="150" id="phone" name="phone" placeholder-class="phcolor" bindfocus="focus"
+        data-key="1" bindinput="mobileInputEvent" class="login-input f16 dis" placeholder="请输入手机号" />
+    </view>
+
+    <view class="item_view {{isFocus==2?'active':''}}">
+      <image src='/images/login/password.png' class='img' />
+      <input type="input" cursor-spacing="150" id="password" name="password" placeholder-class="phcolor"
+        bindfocus="focus" data-key="2" class="login-input f16 dis" placeholder="请输入密码" password="{{!isShow}}"
+        bindinput="passwordInput" />
+      <v-icon icon="eyes-off" color="black" size="{{25}}" bindtap="eyesOpen" wx:if="{{!isShow}}" />
+      <v-icon icon="eyes-on" color="black" size="{{25}}" bindtap="eyesClose" wx:if="{{isShow}}" />
+    </view>
+
+    <view class="item_view {{isFocus==3?'active':''}}">
+      <image src='/images/login/password.png' class='img' />
+      <input type="input" cursor-spacing="150" id="password1" name="password1" placeholder-class="phcolor"
+        bindfocus="focus" data-key="3" class="login-input f16 dis" placeholder="请再次输入密码" password="{{!isShow1}}"
+        bindinput="passwordInput" />
+      <v-icon icon="eyes-off" color="black" size="{{25}}" bindtap="eyesOpen1" wx:if="{{!isShow1}}" />
+      <v-icon icon="eyes-on" color="black" size="{{25}}" bindtap="eyesClose1" wx:if="{{isShow1}}" />
+    </view>
+
+    <view class="item_views {{isFocus==4?'active':''}}">
+      <image src='/images/login/auth_code.png' class='img' />
+      <input type="text" id="code" name="codeImg" placeholder-class='phcolor' bindinput='codeImg' placeholder="请输入图形验证码"
+        maxlength="4" class="login-input f16 dis" value='{{imgCode}}' data-key="4" bindfocus="focus" />
+      <view bindtap="onTap">
+        <image class="imgCanvas" src="{{url1}}"/>
+      </view>
+    </view>
+    <view class="item_view {{isFocus==5?'active':''}}">
+      <image src='/images/login/auth_code.png' class='img' />
+      <input type="text" cursor-spacing="150" id="code" name="code" placeholder-class="phcolor" bindfocus="focus"
+        data-key="5" class="login-input f16 dis" placeholder="请输入验证码" />
+      <button class="buttonget bgColor f12" bindtap="verifyCodeEvent"
+        disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+    </view>
+
+    <view class="register_view">
+      <button class="btn_our f16" formType="submit" bindsubmit="formSubmit">立即绑定</button>
+    </view>
+
+  </form>
+</view>

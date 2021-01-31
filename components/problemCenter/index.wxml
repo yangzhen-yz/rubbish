@@ -1,0 +1,6 @@
+
+<view class="askView" bindtap="open">
+  {{list.question}}
+</view>
+
+<view class="answerView color1" wx:if="{{isShow}}">{{list.answer}}</view>

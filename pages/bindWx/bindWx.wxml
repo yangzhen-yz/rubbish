@@ -1,0 +1,6 @@
+<view class="imgView">
+  <image src="/images/login/logo.png" class="img" />
+</view>
+<view class="top">
+  <button class="btn_our" open-type="getUserInfo" bindgetuserinfo="getUserInfo" lang="zh_CN" disabled="{{disabled}}">绑定微信</button>
+</view>

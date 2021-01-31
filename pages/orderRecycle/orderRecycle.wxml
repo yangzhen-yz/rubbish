@@ -1,0 +1,56 @@
+<view>
+  <image class="top" src="/images/icon/bgBlack.png" />
+</view>
+<view class="top1">
+  <block wx:if="{{adImg!=''}}">
+    <image class="img1" src="{{adImg}} " />
+  </block>
+</view>
+<view class="recycleView">
+  <text class="tx">{{pleaseSelect}}</text>
+  <button class="btn bdColor f14 color3" bindtap="applyPrompt">
+    <block wx:if="{{isMerchant==1}}">你已是商家</block>
+    <block wx:else>申请成为商家</block>
+  </button>
+</view>
+<view class='content'>
+  <block wx:for-items="{{recycleList}}" wx:key="item.id">
+    <view class='rukou'>
+      <view class="flexView">
+        <image src='{{item.img_url}}' class='img' mode='widthFix' />
+        <view class='f19 pl'>{{item.rubbish_type}}</view>
+      </view>
+      <view>
+        <button class='f14 btn1 bgColor' bindtap='toOrder' data-index="{{item.id}}"
+          data-name="{{item.rubbish_type}}">马上预约</button>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='recentCy'>
+  <image class="recycle_img" src="/images/index/recycle_price.png" />
+  <text class="f15 pl5"> 最新回收价格</text>
+</view>
+
+<view class='box2'>
+  <scroll-view class="{{length<7 ? '':scrollView }}" scroll-y="{{scroll_y}}">
+    <block wx:for="{{recyclePrice}}">
+      <v-new-price list="{{item}}">
+      </v-new-price>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="tabbar_box"
+  style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}}">
+  <block wx:for="{{tabbar.list}}" wx:for-item="item" wx:key="index">
+    <navigator class="tabbar_nav" url="{{item.pagePath}}"
+      style="width:{{1/tabbar.list.length*100}}%; color:{{item.selected ? tabbar.selectedColor : tabbar.color}}"
+      open-type="redirect" hover-class="none">
+      <view class="flexView">
+        <image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}" />
+        <text>{{item.text}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>

@@ -1,0 +1,165 @@
+<view class="containers">
+	<view>
+		<view class='bgcolor'>
+			<image src="/images/user/bg.png" class="avatar" />
+		</view>
+
+		<view class='re1 top'>
+			<view class="avatar_view" bindtap="toLogin">
+				<block wx:if="{{mid==''}}">
+					<image class="userinfo-avatar" src="/images/user/avatar.png" />
+				</block>
+				<block wx:else>
+					<image class="userinfo-avatar" src="/images/user/avatar.png" bindtap="selfInfo" wx:if="{{avatar==''}}" />
+					<image class="userinfo-avatar" src="{{avatar}}" bindtap="selfInfo" wx:if="{{avatar!=''}}" />
+				</block>
+			</view>
+
+			<view class='tologin_view '>
+				<view class="grade_view" bindtap="gradeDescription">
+					<text class="f12 color3 grade_tx">等级说明</text>
+					<image src="/images/user/shuoming.png" class="img" />
+				</view>
+				
+				<view class='color'>
+					<block wx:if="{{mid==''}}">
+						<view bindtap="toLogin" class="f_w f15 color3">去登录</view>
+					</block>
+					<block wx:else>
+						<view class="nickName f16" wx:if="{{nickName==''}}">獭獭</view>
+						<view bindtap="toLogin" class="nickName f16" wx:if="{{nickName!=''}}">{{nickName}}</view>
+					</block>
+				</view>
+
+				<block wx:if="{{mid!=''}}">
+					<view>
+						<view class='f13 percent color3'>{{current_integral}}<text class='color4'>/ {{currentLelScore}}</text>
+						</view>
+
+						<view class="flexView">
+							<text class="f13 color3 pr5">V{{lev-1}}</text>
+							<progress percent="{{current_integral/currentLelScore*100}}" activeColor="#47AED3" border-radius="20rpx"
+								class="progress" stroke-width="16rpx" />
+							<text class="f13 color3">V{{lev}}</text>
+						</view>
+
+						<view class='f12 color3 pl'>还需{{currentLelScore-current_integral}}积分可升级到V{{lev}}</view>
+					</view>
+				</block>
+
+			</view>
+		</view>
+	</view>
+
+	<view class="score_view">
+
+		<view class="left_view">
+			<view class="score_tx color3">{{current_integral}}</view>
+			<view class="f12">当前积分</view>
+		</view>
+		<view class="column"></view>
+
+		<view class="right_view">
+			<View class="score_tx color7">{{unenforced_integral}}</View>
+			<view class="f12">待入账积分</view>
+		</view>
+
+		<view class="detail_view">
+			<view class="total_view">
+				<view class="f15 f_w ">{{totalMoney}}</view>
+				<view class="f11">总提现金额(元)</view>
+			</view>
+
+			<view class="column"></view>
+			<view class="total_view">
+				<view class="f15 f_w">{{totalIntegral}}</view>
+				<view class="f11">总获得积分</view>
+			</view>
+
+			<view class="column"></view>
+			<view class="total_view">
+				<view class="f15 f_w">{{totalWeight}}</view>
+				<view class="f11">总投放重量(kg)</view>
+			</view>
+
+			<view class="column"></view>
+			<view class="total_view">
+				<view class="f15 f_w">{{totalNum}}</view>
+				<view class="f11">总瓶数(个)</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="boxt f14">
+		<view class="record_view" bindtap="jfRecord">
+			<image src="/images/user/jifen.png" class="img1" />
+			<text class="mt">积分记录</text>
+		</view>
+
+		<view class="record_view" bindtap="txRecord">
+			<image src="/images/user/tixian.png" class="img1" />
+			<text class="mt">提现记录</text>
+		</view>
+
+		<view class="record_view" bindtap="jcRecord">
+			<image src="/images/user/jiangcheng.png" class="img1" />
+			<text class="mt">奖惩记录</text>
+		</view>
+
+		<view class="record_view" bindtap="orderList">
+			<image src="/images/user/info.png" class="img1" />
+			<text class="mt">预约订单</text>
+		</view>
+	</view>
+
+	<view class="boxt1">
+		<view class="list f14 " bindtap="infoPerfect">
+			<text>信息完善</text>
+			<image class="image_right" src="/images/user/right.png" />
+		</view>
+
+		<block wx:if="{{isMerchant==1||isShow}}">
+			<view class="list f14" bindtap="businessInfo">
+				<text>商家信息</text>
+				<image class="image_right" src="/images/user/right.png" />
+			</view>
+		</block>
+
+		<view class="list f14" bindtap="passwordManage">
+			<text>密码管理</text>
+			<image class="image_right" src="/images/user/right.png" />
+		</view>
+
+		<view class="list f14" bindtap="feedback">
+			<text>意见反馈</text>
+			<image class="image_right" src="/images/user/right.png" />
+		</view>
+
+		<view class="list f14" bindtap="helpCenter">
+			<text>帮助中心</text>
+			<image class="image_right" src="/images/user/right.png" />
+		</view>
+
+		<view class="list f14" bindtap="aboutUs">
+			<text>关于我们</text>
+			<image class="image_right" src="/images/user/right.png" />
+		</view>
+	</view>
+
+	<view class='mt30' wx:if="{{mid!=''}}">
+		<button class="btn_our" bindtap="loginout">退出登录</button>
+	</view>
+	<include src="../index/foot.wxml" />
+</view>
+
+<view class="tabbar_box"
+	style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}}">
+	<block wx:for="{{tabbar.list}}" wx:for-item="item" wx:key="index">
+		<navigator class="tabbar_nav" url="{{item.pagePath}}"
+			style="width:{{1/tabbar.list.length*100}}%; color:{{item.selected ? tabbar.selectedColor : tabbar.color}}"
+			open-type="redirect" hover-class="none">
+			<image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}" />
+			<text>{{item.text}}</text>
+		</navigator>
+	</block>
+</view>

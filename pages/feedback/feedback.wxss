@@ -1,0 +1,106 @@
+.top{
+  z-index: -1;
+  position: absolute;
+  top: 0;
+}
+
+.content {
+  background-color: #FFFFFF;
+  border-radius: 40rpx 40rpx 0 0;
+  margin-top: 284rpx;
+}
+
+.feedImg {
+  width: 750rpx;
+  height: 360rpx;
+}
+
+.problem_tx {
+  padding-top: 35rpx;
+  margin-left: 33rpx;
+}
+
+.fcolor {
+  color: #ACACAC;
+}
+
+.content1 {
+  height: 92rpx;
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  margin-top: 13rpx;
+}
+
+.phone_tx {
+  margin-left: 31rpx;
+}
+
+.fileImg_view {
+  display: inline-block;
+  margin-top: 27rpx;
+  padding-bottom: 36rpx;
+}
+
+.fileImg {
+  width: 149rpx;
+  height: 149rpx;
+}
+
+.file_tx {
+  padding-top: 26rpx;
+  margin-left: 33rpx;
+}
+
+.explain_tx {
+  margin: 28rpx 31rpx;
+}
+
+.mt77 {
+  margin-top: 77rpx;
+  margin-bottom: 112rpx;
+}
+
+.tx {
+  padding: 35rpx 0 26rpx 33rpx;
+  border-bottom: solid 1rpx #F4F4F4;
+}
+
+.word {
+  width: 100%;
+  border-bottom: solid 1rpx #F4F4F4;
+}
+
+.textarea_view {
+  padding: 22rpx 37rpx 0;
+}
+
+.phone_input {
+  margin-left: 59rpx;
+}
+
+.thumb {
+  width: 149rpx;
+  height: 149rpx;
+}
+
+.close {
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  right: 16rpx;
+  bottom: 132rpx;
+}
+
+.imgs_view {
+  margin-left: 26rpx;
+}
+
+.imgs {
+  display: inline-block;
+  margin-top: 26rpx;
+}
+
+.place {
+  padding-left: 37rpx;
+}

@@ -1,0 +1,37 @@
+page {
+  background-color: #f5f5f5;
+}
+
+.picture-view {
+  margin-top: 185rpx;
+  text-align: center;
+}
+
+.image {
+  width: 250rpx;
+}
+
+.mid_view {
+  margin-top: 35rpx;
+  text-align: center;
+}
+
+.bot_view {
+  margin: auto 77rpx;
+  margin-top: 34rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.btn {
+  width: 248rpx !important;
+  height: 74rpx !important;
+  border-radius: 37rpx;
+  background-color: #47AED3;
+  color: #ffffff;
+  font-size: 31rpx;
+  line-height: 74rpx;
+  font-weight: normal;
+  margin-top: 34rpx;
+
+}

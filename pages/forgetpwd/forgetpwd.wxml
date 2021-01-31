@@ -1,0 +1,47 @@
+<view>
+  <form bindsubmit="formSubmit">
+    <view class="f16 f_w phone">请输入您的手机号</view>
+    <view class="f13  state">可通过注册时使用的手机号用来更换新密码</view>
+
+    <view class="item {{isFocus==1? 'active':''}}">
+      <text class="f15 phone_tx">手机号</text>
+      <input type="number" placeholder="请输入手机号" placeholder-class="f16" name="phone" bindfocus="focus" data-key="1"
+        bindinput="mobileInputEvent" class="input1" />
+    </view>
+
+		<view class="item0 {{isFocus==2?'active':''}}">
+      <text class="f15">图形验证码</text>
+			<input type="text" id="code" name="codeImg" placeholder-class='f16' bindinput='codeImg' placeholder="请输入图形验证码"
+				maxlength="4" class="input0 f16 " value='{{imgCode}}' data-key="2" bindfocus="focus" />
+			<view bindtap="onTap">
+        <image src="{{codeUrl}}" class="imgCanvas"/>
+			</view>
+		</view>
+
+    <view class="item1 {{isFocus==3? 'active':''}}">
+      <text class="f15">验证码</text>
+      <input placeholder="请输入验证码" placeholder-class="f16" name="code" bindfocus="focus" data-key="3" class="input1" />
+      <button class="buttonget bgColor f12" bindtap="verifyCodeEvent" disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+    </view>
+
+    <view class="item1 {{isFocus==4? 'active':''}}">
+      <text class="f15">新密码</text>
+      <input placeholder="请输入新密码" placeholder-class="f16" name="newPassword" bindfocus="focus" data-key="4" password="{{!isShow}}"
+        class="input3" />
+      <v-icon icon="eyes-off" color="black" size="{{25}}" bindtap="eyesOpen" wx:if="{{!isShow}}" data-eye="1" />
+      <v-icon icon="eyes-on" color="black" size="{{25}}" bindtap="eyesClose" wx:if="{{isShow}}" data-eye="1" />
+    </view>
+
+    <view class="item1 {{isFocus==5? 'active':''}}">
+      <text class="f15">确认新密码</text>
+      <input placeholder="请再次确认新密码" placeholder-class="f16" class="input2" name="confirmPassword" bindfocus="focus" password="{{!isShow1}}"
+        data-key="5" />
+      <v-icon icon="eyes-off" color="black" size="{{25}}" bindtap="eyesOpen" wx:if="{{!isShow1}}" data-eye="2" />
+      <v-icon icon="eyes-on" color="black" size="{{25}}" bindtap="eyesClose" wx:if="{{isShow1}}" data-eye="2" />
+    </view>
+
+    <view class="btm_view">
+      <button class="btn_our" form-type="submit">确认修改</button>
+    </view>
+  </form>
+</view>

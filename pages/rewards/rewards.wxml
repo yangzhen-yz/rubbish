@@ -1,0 +1,38 @@
+<view class="tab-h bgColor f16">
+  <view class="tab-item {{currentTab==0?'active':''}} f16" data-current="0" bindtap="swichNav">我的奖励</view>
+  <view class="tab-item {{currentTab==1?'active':''}} f16" data-current="1" bindtap="swichNav">我的惩罚</view>
+</view>
+
+<scroll-view scroll-y="true" class="scrollView">
+  <block wx:if="{{currentTab==0}}">
+    <view class="item_view" wx:for="{{rewardList}}">
+      <view class="f17 f_w top_view">
+        <text>奖励说明</text>
+        <text class="color3">+{{item.integral}}积分</text>
+      </view>
+      <view class="f14 bottom_view" wx:if="{{item.reason!=null}}">
+        <text>{{item.reason}}</text>
+      </view>
+    </view>
+    <view class="center" style="padding-top:30%" wx:if="{{rewardList==''}}">
+      <image src=' /images/index/no_log.png' mode="widthFix" style="width:40%" />
+      <view class='line color4 f14'>暂无记录</view>
+    </view>
+  </block>
+
+  <block wx:if="{{currentTab==1}}">
+    <view class="item_view" wx:for="{{punishList}}">
+      <view class="f17 f_w top_view">
+        <text>惩罚说明</text>
+        <text class="color7">-{{item.integral}}积分</text>
+      </view>
+      <view class="f14 bottom_view" wx:if="{{item.reason!=null}}">
+        <text>{{item.reason}}</text>
+      </view>
+    </view>
+    <view class="center" style="padding-top:30%" wx:if="{{punishList==''}}">
+      <image src=' /images/index/no_log.png' mode="widthFix" style="width:40%" />
+      <view class='line color4 f14'>暂无记录</view>
+    </view>
+  </block>
+</scroll-view>

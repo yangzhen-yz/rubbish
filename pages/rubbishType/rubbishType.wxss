@@ -1,0 +1,27 @@
+.content {
+  width: 700rpx;
+  margin: 30rpx 27rpx;
+  background: #fff;
+  box-shadow: 0rpx 6rpx 9rpx rgba(142, 142, 142, 0.16);
+  padding: 66rpx 0 112rpx 0;
+}
+
+.title {
+  width: 499rpx;
+  height: 59rpx;
+  margin: 0 auto 50rpx;
+  display: block;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 23rpx;
+}
+
+.img1 {
+  width: 301rpx;
+  height: 193rpx;
+  padding-bottom: 32rpx;
+}

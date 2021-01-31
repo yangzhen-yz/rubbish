@@ -1,0 +1,25 @@
+/* components/staffImg/index.wxss */
+.downImg {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.more_view {
+  display: flex;
+  justify-content: center;
+}
+
+.staffImg {
+  width: 97rpx;
+  height: 97rpx;
+}
+
+.staff_view {
+  display: flex;
+  align-items: center;
+  padding-left: 26rpx;
+}
+
+.ml {
+  margin-left: 40rpx;
+}

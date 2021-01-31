@@ -1,0 +1,186 @@
+.containers {
+  padding-bottom: 160rpx;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.userinfo-avatar {
+  border-radius: 50%;
+  width: 110rpx;
+  height: 110rpx;
+  z-index: 999;
+  vertical-align: top
+}
+
+.avatar {
+  width: 100%;
+  height: 175rpx;
+}
+
+.grade_view {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.grade_tx {
+  padding-right: 11rpx;
+}
+
+.img {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.nickName {
+  display: inline-block;
+  line-height: 45rpx;
+}
+
+.boxt {
+  margin-top: 20rpx;
+  height: 206rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.record_view {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mt{
+  margin-top: 13rpx;
+}
+
+.boxt1 {
+  margin-top: 20rpx;
+  background-color: #FFFFFF;
+}
+
+.list {
+  padding: 28rpx 0rpx;
+  margin: 0 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image_right {
+  width: 8pt;
+  height: 10pt;
+}
+
+.top {
+  background: #fff;
+  border-radius: 10px;
+  top: 2%;
+  left: 4%;
+  right: 4%;
+  box-shadow: 0px 6rpx 9rpx rgba(142, 142, 142, 0.16);
+  padding-top: 19rpx;
+  padding-left: 21rpx;
+  height: 204rpx;
+  display: flex;
+}
+
+.img1 {
+  width: 59rpx;
+  height: 58rpx;
+}
+
+.btn_our {
+  width: 650rpx !important;
+  height: 87rpx !important;
+  border-radius: 44rpx;
+  color: #ACACAC;
+  background: #f5f5f5;
+  border: solid 1rpx #ACACAC;
+  font-size: 36rpx;
+  line-height: 87rpx;
+  margin: 70rpx 50rpx auto 50rpx;
+}
+
+.score_view {
+  height: 307rpx;
+  background-color: #FFFFFF;
+  margin-top: 100rpx;
+}
+
+.left_view {
+  display: inline-block;
+  height: 144rpx;
+  width: 49%;
+  text-align: center;
+}
+
+.column {
+  display: inline-block;
+  background-color: #F5F5F5;
+  width: 2rpx;
+  height: 75rpx;
+}
+
+.right_view {
+  display: inline-block;
+  height: 144rpx;
+  width: 49%;
+  text-align: center;
+}
+
+.score_tx {
+  padding-top: 30rpx;
+  font-size: 39rpx;
+}
+
+.detail_view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 37rpx 0;
+  border-top: solid 1rpx #F4F4F4;
+}
+
+.total_view {
+  display: inline-block;
+  width: 24.5%;
+  text-align: center;
+}
+
+.progress {
+  width: 85%;
+}
+
+.pr5 {
+  padding-right: 5rpx;
+}
+
+.tologin_view {
+  padding-left: 16rpx;
+  width: 78%;
+  padding-bottom: 24rpx;
+}
+
+.avatar_view {
+  padding-top: 20rpx;
+}
+
+.pl {
+  padding-left: 48rpx;
+}
+
+.percent {
+  padding-left: 111rpx;
+}
+
+.mt30 {
+  margin-top: 60rpx;
+}
+
+.btn {
+  border-radius: 50%;
+  padding: 0;
+}

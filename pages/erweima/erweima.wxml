@@ -1,0 +1,10 @@
+<view class='con'>
+  <view class='erweima'>
+  <view class='top re'>
+    <image class="userinfo-avatar re1" src="{{userInfo.avatarUrl}}"></image>
+    <view class='name f14 dis re1'>{{userInfo.nickName}}</view>
+  </view>
+    <image class='img' src='https://www.geruiyin.cn/{{memdata.qr}}'></image>
+    <view class='center color4 f14'>请对准机器扫描口进行扫码</view>
+  </view>
+</view>

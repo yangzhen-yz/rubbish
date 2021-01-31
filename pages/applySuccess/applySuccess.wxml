@@ -1,0 +1,11 @@
+<view class="main">
+  <view class="picture-view">
+    <image class="image" src="/images/icon/business.png" mode="widthFix" />
+  </view>
+  <view class="mid_view">
+    <text class="f16">提交成功，请等待审核</text>
+  </view>
+  <view class="bot_view">
+    <text class="f14">可在<text class="color7">个人中心-商家身份</text>页面中查看</text>
+  </view>
+</view>

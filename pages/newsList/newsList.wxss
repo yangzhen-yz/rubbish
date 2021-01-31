@@ -1,0 +1,37 @@
+.item {
+  background-color: #FFFFFF;
+  margin-top: 20rpx;
+}
+
+.img {
+  width: 180rpx;
+  height: 124rpx;
+  border-radius: 8rpx
+}
+
+.con1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20rpx;
+  padding: 20rpx 0rpx;
+}
+
+.con1View {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.scrollView{
+  height: 1400rpx;
+}
+
+.title {
+  margin-bottom: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

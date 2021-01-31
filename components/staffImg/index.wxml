@@ -1,0 +1,14 @@
+<view class="more_view" bindtap="open" wx:if="{{!isShow}}" data-key="{{list.reserve_rubbish_id}}">
+  <image class="downImg" src="/images/icon/down.png" />
+</view>
+
+<view class="staff_view" wx:if="{{isShow}}">
+  <view class="f14">员工上传</view>
+  <view wx:for="{{list.staff_imgs}}" wx:for-item="items" class="ml">
+    <image class="staffImg" src="{{items}}" data-url="{{items}}" bindtap="previewImg" />
+  </view>
+</view>
+
+<view class="more_view" bindtap="close" wx:if="{{isShow}}" data-key="{{list.reserve_rubbish_id}}">
+  <image class="downImg" src="/images/icon/up.png" />
+</view>

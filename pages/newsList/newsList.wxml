@@ -1,0 +1,15 @@
+<scroll-view scroll-y="true" class="scrollView">
+  <view wx:for="{{newsList}}" wx:for-item="item" wx:key="item.id" class="item">
+    <navigator url="../newdetail/newdetail?articleId={{item.articleId}}" hover-class="none">
+      <view class='con1'>
+        <view class="con1View">
+          <view class='f_w color f16 title'>{{item.title}}</view>
+          <view class="f12 color1">{{item.create_time}}</view>
+        </view>
+        <view>
+          <image src='{{item.img_small}}' class="img" />
+        </view>
+      </view>
+    </navigator>
+  </view>
+</scroll-view>

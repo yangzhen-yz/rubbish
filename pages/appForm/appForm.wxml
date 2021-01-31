@@ -1,0 +1,142 @@
+<view class='f16'>
+  <form bindsubmit="formSubmit">
+    <view class='form'>
+      <view class='type_view'>
+        <text class="f16">回收种类</text>
+        <view wx:if="{{list1.length==0}}" class='color4' bindtap='showPicker'>
+          <text class="f14">选择回收种类</text>
+        </view>
+      </view>
+
+      <block wx:for-items="{{list1}}" wx:key="item.id">
+        <view class='bor1'>
+          <view class="flexView">
+            <image src='{{item.img_url}}' class='img2' />
+            <text class='f16 pl8'>{{item.rubbish_type}}</text>
+          </view>
+
+          <view class="flexView">
+            <view class='pr10'>{{item.price}}积分/kg</view>
+            <image class="reduceImg" src="/images/index/reduce.png" data-ids="{{item.id}}" bindtap="reduce" />
+          </view>
+        </view>
+      </block>
+
+      <view wx:if="{{list1.length!==0}}" class='editView' bindtap='showPicker'>
+        <image src='/images/index/go.png' class="addImg" />
+        <text class='f16'>添加修改</text>
+      </view>
+    </view>
+
+    <view class='form'>
+      <view class='selfInfo bor f13 color4'>请填写个人信息</view>
+
+      <view class='phone_view bor'>
+        <view class='dis link-phone'>联系电话</view>
+        <input name="mobile" placeholder-class="phcolor f14" class="f16 dis phone-input" type="number"
+          value="{{userInfo.phone}}" placeholder="请填写您的联系方式" />
+      </view>
+
+      <view class='line'>
+        <view class='dis link-phone'>详细住址</view>
+        <textarea auto-height="true" name="address" placeholder-class="phcolor f14" class="dis f16 address-input"
+          value='{{detailAddress}}' placeholder="请输入详细地址" />
+        </view>
+  </view>
+
+  <view class='form'>
+    <view  class='line'>
+      <view class='dis' >
+        <text space="emsp">留  言</text>
+      </view>
+
+      <textarea  auto-height  name="word" placeholder-class="f14" 
+      class="dis phone-input" placeholder="如有特殊要求，请留言" />
+    </view>
+  </view>
+
+  <view class="picture-view">
+    <text class="tx">上传图片</text>
+    <input  class="picture-input"  placeholder="为了更好为您服务，请将回收物品拍摄照片" disabled="true"/>
+    <view class="line1"></view>
+
+      <view class="img_view" wx:for="{{img_arr}}" catch:tap="selectImg" data-url="{{item}}">
+        <image class="thumb" data-index="{{index}}" src="{{item}}"/>
+        <image class="close" data-index="{{index}}" catch:tap="delImage" src="/images/type/close.png"/>
+      </view>
+    
+      <view class="mt38">
+       <button class="btn1 bgColor" bindtap="upImg">上传图片</button>
+     </view>
+  </view>
+
+  <view class="service_view">
+    <view class="service_tx">服务费</view>
+      <image class="questionImg" src=""/>
+      <view class="service_tx1">以回收价格的5%收取</view>
+  </view>
+
+  <view class='color4 f14 line2 note-view' >
+    <text style='font-size:16px'>备注：</text>
+
+    <view class="note-content" wx:for="{{notes}}" wx:for-index="i">
+      <text class="tx2">●{{item}}</text>
+    </view>
+  </view>
+
+  <view class='center color' bindtap="calling">客服电话：
+    <text class='color3'>{{phonedata}}</text>
+  </view>
+
+  <view class="black_view"></view>
+
+  <view class="btn_view">
+    <button class="f16"  wx:if="{{!disabled}}" formType="submit"  class="btn bgColor">提交预约单</button>
+    <button class="f16"  wx:if="{{disabled}}"  class="btn bgColor" >提交预约单</button>
+  </view>
+</form>
+</view>
+
+<view class="mask" bindtap="go" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class="modalDlg" wx:if="{{showModal}}" style='height:30%;overflow:scroll'>
+<scroll-view class="scrollview" scroll-y="{{scroll_y}}">
+  <block wx:for="{{addressdata}}" wx:for-item="item" wx:key="item.id">
+    <view class='f16'>
+      <view bindtap="mySelect" data-name="{{item.address}}" class='color4' style='border-bottom:1px solid #EAEAEA;padding:10px'>{{item.address}}</view>
+    </view>
+  </block>
+</scroll-view>
+</view>
+
+<cover-view class='{{ showPicker ? "shade-container" : "hide-container" }} center re' wx:if='{{ firstShow }}'>
+
+<cover-view class='left-shade' bindtap='hidePicker'></cover-view>
+
+<cover-view class='right-choose'>
+  <cover-view class='button-container f16'>请选择回收类别</cover-view>
+  
+  <cover-view class='picker-container center'>
+
+    <cover-view	class='picker-item'	wx:for='{{chooseList}}'	wx:key='index' wx:for-item='item'	bindtap='chooseItem'	data-id='{{item.id}}'	>
+
+      <cover-view class='size' style='border:{{ item.flag ? "solid 1px #47AED3" : "solid 1px #F5F5F5" }}'>
+
+        <cover-image src='{{item.img_url}}'/>
+      
+        <cover-image class ='select-img' src='/images/index/select.png'  wx:if="{{item.flag}}"/>
+
+        <cover-image class ='select-img' src='/images/index/unselect.png' wx:if="{{!item.flag}}"/>
+        
+      </cover-view>
+
+      <cover-view class='item-name'>{{item.rubbish_type}}</cover-view>
+      
+    </cover-view>
+    
+  </cover-view>
+  
+  <button class="f16 bgColor cover-view-button" bindtap='sure' >选好了</button>
+
+</cover-view>
+</cover-view>

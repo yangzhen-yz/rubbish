@@ -1,0 +1,128 @@
+/* pages/order/order.wxss */
+page {
+  background: #F5F5F5
+}
+
+.tab-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 44px;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+
+.tab-item.active {
+  border-bottom: 4px solid #fff;
+  font-weight: bold;
+}
+
+.date_view {
+  margin-top: 27rpx;
+  margin-left: 21rpx;
+  background-color: #ffffff;
+  font-size: 25rpx;
+  height: 54rpx;
+  width: 201rpx;
+  border-radius: 100rpx;
+  text-align: center;
+  line-height: 54rpx;
+}
+
+.content_view {
+  margin-top: 28rpx;
+}
+
+.scrollview {
+  height: 1100rpx;
+}
+
+.list_view {
+  background-color: #FFFFFF;
+  margin: 0 21rpx;
+  padding: 0 35rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 25rpx;
+}
+
+.img {
+  width: 32.7rpx;
+  height: 32.7rpx;
+}
+
+.tx {
+  font-size: 28rpx;
+  font-weight: bold;
+  padding-left: 15rpx;
+}
+
+.img1 {
+  width: 22rpx;
+  height: 29rpx;
+}
+
+.line_view {
+  background-color: #F4F4F4;
+  height: 1rpx;
+  margin-top: 24rpx;
+}
+
+.detail_view {
+  margin-top: 19rpx;
+}
+
+.item_view {
+  margin-top: 19rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.line_view1 {
+  background-color: #F4F4F4;
+  height: 2rpx;
+  margin-top: 24rpx;
+}
+
+.cancelBtn {
+  padding: 22rpx 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  width: 150rpx !important;
+  height: 46rpx !important;
+  border-radius: 23rpx;
+  line-height: 38rpx;
+  padding: 0;
+  background-color: #fff;
+  font-weight: normal;
+  margin: 0;
+}
+
+.receive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25rpx 0;
+}
+
+.pr {
+  padding-right: 14rpx;
+}
+
+.pr20 {
+  padding-right: 20rpx;
+}

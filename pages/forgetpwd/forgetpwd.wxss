@@ -1,0 +1,88 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.phone {
+  padding-top: 77rpx;
+  margin-left: 64rpx;
+}
+
+.state {
+  margin-left: 64rpx;
+  margin-top: 29rpx;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 0 54rpx;
+  padding-top: 63rpx;
+  padding-bottom: 26rpx;
+  border-bottom: solid 1rpx #AAAAAA;
+}
+
+.item0 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 54rpx;
+  padding-top: 46rpx;
+  padding-bottom: 26rpx;
+  border-bottom: solid 1rpx #AAAAAA;
+}
+
+.item1 {
+  display: flex;
+  align-items: center;
+  margin: 0 54rpx;
+  padding-top: 54rpx;
+  padding-bottom: 26rpx;
+  border-bottom: solid 1rpx #AAAAAA;
+}
+
+.fcolor {
+  color: #9A9A9A
+}
+
+/* 获取验证码按钮 */
+.buttonget {
+  display: inline-block;
+  color: #fff;
+  border-radius: 10rpx;
+  width: 155rpx !important;
+  height: 61rpx !important;
+  line-height: 61rpx;
+  padding: 0;
+}
+
+.btm_view {
+  margin-top: 129rpx;
+}
+
+.input1 {
+  width: 45%;
+  margin-left: 96rpx;
+}
+
+.input0{
+  width: 42%;
+}
+
+.input2 {
+  width: 55%;
+  margin-left: 38rpx;
+}
+
+.input3 {
+  width: 55%;
+  margin-left: 96rpx;
+}
+
+.input4 {
+  width: 42%;
+  margin-left: 34rpx;
+}
+
+.active {
+  border-bottom-color: #47AED3;
+}

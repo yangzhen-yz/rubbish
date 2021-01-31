@@ -1,0 +1,33 @@
+/* components/newPrice/newPrice.wxss */
+@import "/app.wxss";
+
+.priceView {
+  background: #F8F8F8;
+  width: 182rpx;
+  display: inline-block;
+  border-radius: 20rpx;
+  margin: 0 15rpx;
+  margin-bottom: 28rpx;
+  text-align: center;
+}
+
+.goods_view {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 18rpx;
+}
+
+.goods {
+  width: 110rpx;
+  height: 71rpx;
+}
+
+.unit {
+  margin-bottom: 22rpx;
+}
+
+.scrollview {
+  height: 500rpx;
+}

@@ -1,0 +1,42 @@
+page{
+  background: #f1f1f1
+}
+.bor{
+  border-radius: 20px;
+  background: #fff
+}
+.line{
+  padding: 10px 0
+}
+
+/* radio */
+.radio-group {
+  flex-direction: left;
+  align-items: center;
+}
+.radio {
+  margin-top: 10px;
+}
+radio .wx-radio-input{
+    height: 18rpx; 
+    width: 18rpx;
+    margin-top: -4rpx;
+    border-radius: 50%;
+    border: 1rpx solid #47AED3
+ }
+ radio .wx-radio-input.wx-radio-input-checked{
+  border: none;
+  background: #47AED3
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  height: 12rpx; 
+  width: 12rpx;
+  line-height: 12rpx;
+  text-align: center;
+  font-size:0; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: #47AED3;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}

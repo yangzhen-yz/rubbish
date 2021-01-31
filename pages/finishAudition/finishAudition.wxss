@@ -1,0 +1,76 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.top {
+  background-color: #F5F5F5;
+}
+
+.processView {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 126rpx;
+  padding: 33rpx 0 5rpx 0;
+}
+
+.line1 {
+  display: inline-block;
+  vertical-align: super;
+  width: 189rpx;
+  height: 2rpx;
+}
+
+.img {
+  width: 37rpx;
+  height: 37rpx;
+}
+
+.process_tx {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 101rpx;
+  padding: 5rpx 0 32rpx 0;
+}
+
+.line_color {
+  background-color: #D2D2D2;
+}
+
+.mid {
+  margin-top: 112rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.img1 {
+  width: 329rpx;
+  height: 331rpx;
+}
+
+.result {
+  margin-top: 68rpx;
+  text-align: center;
+}
+
+.tx {
+  margin-top: 36rpx;
+}
+
+.fcolor {
+  color: #4D4D4D;
+}
+
+.btm {
+  margin-top: 71rpx;
+}
+
+.btn {
+  width: 458rpx !important;
+  height: 81rpx !important;
+  border-radius: 41rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

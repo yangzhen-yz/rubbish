@@ -1,0 +1,30 @@
+<view class="top">
+  <view class="processView">
+    <image class="img" src="/images/icon/gray_one.png" />
+    <view class="line1 line_color"></view>
+
+    <image class="img" src="/images/icon/gray_two.png" />
+    <view class="line1 line_color"></view>
+
+    <image class="img" src="/images/icon/three.png" />
+  </view>
+
+  <view class="process_tx">
+    <text class="f12">资料填写</text>
+    <text class="f12">资料审核</text>
+    <text class="f12 color3">完成申请</text>
+  </view>
+</view>
+<view class="mid">
+  <image class="img1" src="/images/icon/audit.png" />
+</view>
+<view class="result">
+  <view class="f20 color3">抱歉，您的审核未通过！</view>
+  <view class="f14 color7 tx" wx:if="{{reason!=null}}">{{reason}}</view>
+  <view class="f14 fcolor ">请修改填写的资料信息,如有疑问</view>
+  <view class="f14 fcolor">请咨询{{phone}}</view>
+</view>
+
+<view class="btm" bindtap="toApply">
+  <button class="btn bgColor f14">再次认证</button>
+</view>

@@ -1,0 +1,41 @@
+<view class="top">
+  <image src="/images/user/feedback.png" class="feedImg" />
+</view>
+
+<form bindsubmit="formSubmit">
+  <view class='content'>
+    <view class='f16 tx'>您的问题或者建议：</view>
+
+    <view class="textarea_view">
+      <textarea id="problem" name="problem" placeholder="请填写您的问题或者意见，我们会尽快为您处理" placeholder-class="fcolor f15 place"
+        class='word' />
+      </view>
+
+    <view class="f15 file_tx">附件上传</view>
+
+     <view class="imgs_view">
+        <view class="imgs" wx:for="{{img_arr}}" catch:tap="selectImg" data-url="{{item}}">
+					<image class="thumb" data-index="{{index}}" src="{{item}}"/>
+				  <image class="close" data-index="{{index}}" catch:tap="delImage" src="/images/type/close.png"/>
+        </view>
+
+        <block wx:if="{{isShow}}">
+          <view class="fileImg_view" bindtap="upImg">
+            <image class="fileImg" src="/images/type/tj.png"/>
+          </view>
+       </block>
+      </view>
+    </view>
+    
+  <view class='content1'>
+    <view class='f15 phone_tx'>手机号</view>
+    <input id="mobile" name="mobile" placeholder="请输入联系方式" value="{{phone}}"  class='f15 phone_input' placeholder-style="f15 fcolor"/>
+  </view>
+
+  <view class="explain_tx">
+    <text class='color4 f14'>留下您的联系方式，以便我们了解问题后及时反馈问题结果。</text>
+  </view>
+
+  <button class="btn_our f18 mt77" wx:if="{{!disabled}}" formType="submit">立即提交</button>
+  <button class="btn_our f18" wx:if="{{disabled}}">立即提交</button>
+</form>

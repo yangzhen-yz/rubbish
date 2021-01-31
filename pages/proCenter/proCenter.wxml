@@ -1,0 +1,32 @@
+<view>
+  <image class="img" src="/images/user/helpCenter.png" />
+</view>
+<view class="main">
+  <view class="img1_view">
+    <image class="img1" src="/images/user/problem.png" />
+  </view>
+  <view class="inputView">
+    <image src="/images/icon/search.png" class="searchImg" />
+    <input class="f14" placeholder="投递" placeholder-class="f14 fcolor1" bindinput="search" value="{{input}}" />
+  </view>
+  <view class="title_view">
+    <text class="f12 fcolor1 ml50">热门搜索</text>
+    <view wx:for="{{keyword}}" bindtap="fastSearch" data-value="{{item.id}}" data-name="{{item.name}}">
+      <view class="fsize color3">{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class="item_view">
+
+    <van-collapse value="{{activeNames}}" bind:change="onChange" wx:for="{{problemList}}">
+      <van-collapse-item title="{{item.question}}" name="{{item.answer}}">
+        {{activeNames}}
+      </van-collapse-item>
+    </van-collapse>
+
+    <!-- <view wx:for="{{problemList}}" class="f14 itemList" wx:for-index="i">
+      <v-problem-center list="{{item}}">
+      </v-problem-center>
+    </view> -->
+  </view>
+</view>

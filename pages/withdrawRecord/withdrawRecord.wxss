@@ -1,0 +1,55 @@
+page {
+  background: #F5F5F5
+}
+
+.tab-h {
+  height: 87rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tab-item {
+  color: #fff;
+  display: inline-block;
+}
+
+.tab-item.active {
+  border-bottom: 4px solid #fff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.fcolor1 {
+  color: #ACACAC
+}
+
+.item_view {
+  background-color: #FFFFFF;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  height: 124rpx;
+}
+
+.top_view {
+  padding-top: 22rpx;
+  line-height: 42rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 26rpx;
+}
+
+.bottom_view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 26rpx;
+  line-height: 37rpx;
+}
+
+.scrollView {
+  height: 1300rpx;
+}

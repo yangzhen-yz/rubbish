@@ -1,0 +1,11 @@
+<view class='wcolor mt20 f15'>
+  <view class="list">
+    <text>客服电话</text>
+    <text>{{phone}}</text>
+  </view>
+
+  <view class="list mt20">
+    <text>服务时间</text>
+    <text>{{workTime}}</text>
+  </view>
+</view>

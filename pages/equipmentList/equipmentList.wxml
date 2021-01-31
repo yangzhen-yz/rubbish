@@ -1,0 +1,65 @@
+<view class="top">
+  <view class="search_view">
+    <image class="searchImg" src="/images/index/search.png" />
+    <input placeholder="请搜索回收机" placeholder-class="f13 pl" bindinput="search" />
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="{{isTrue ? 'scrollView':'scrollView1'}}">
+  <view class="item_view" wx:for="{{communityList}}" wx:for-index="i" data-key="{{item.deviceId}}" bindtap="toDetail">
+    <view class="item_title">
+      <view class="flexView">
+        <text class="f17 f_w">{{item.community}}</text>
+        <block wx:if="{{item.device_status.type==3}}">
+          <view class="color3 f12 statusView">{{item.device_status.status}}</view>
+        </block>
+        <block wx:if="{{item.device_status.type==2}}">
+          <view class="color8 f12 statusView">{{item.device_status.status}}</view>
+        </block>
+        <block wx:if="{{item.device_status.type==1}}">
+          <view class="color6 f12 statusView">{{item.device_status.status}}</view>
+        </block>
+      </view>
+      <text class="f14 color3">{{item.distance}}{{item.unit}}</text>
+    </view>
+
+    <view class="mid">
+      <view class="left_view">
+        <view class="item_detail">
+          <block wx:if="{{item.address!=null}}">
+            <image class="img" src="/images/icon/location.png" />
+            <text class="f13 fcolor1">{{item.address}}</text>
+          </block>
+        </view>
+        <view class="item_detail">
+          <block wx:if="{{item.operation_time!=null}}">
+            <image class="img" src="/images/icon/time.png" />
+            <text class="f13 fcolor1">{{item.operation_time}}</text>
+          </block>
+        </view>
+      </view>
+
+      <view catchtap="toLocation" data-long="{{item.longitude}}" data-lati="{{item.latitude}}">
+        <button class="btn1  bgColor f13">导航</button>
+      </view>
+    </view>
+
+    <view class="status" wx:for="{{item.door_status}}" wx:for-item="items" wx:if="{{item.device_status.type==1}}">
+      <view class="f12 btn2 color3 bdColor">{{items.status}}</view>
+    </view>
+    <view class="black"></view>
+  </view>
+
+  <block wx:if="{{communityList==''}}">
+    <view class='center' style='padding-top:30%'>
+      <image src='/images/index/no_log.png' mode="widthFix" style="width:40%" />
+      <view class='line color4 f14'>暂无记录</view>
+    </view>
+  </block>
+</scroll-view>
+
+<block wx:if="{{isTrue}}">
+  <view bindtap="mapMode" class="btm_view" wx:if="{{isShow}}">
+    <button class="mapBtn bgColor color1">地图模式</button>
+  </view>
+</block>

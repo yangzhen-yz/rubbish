@@ -1,0 +1,23 @@
+page {
+  background-color: #f5f5f5;
+}
+
+.picture-view {
+  margin-top: 222rpx;
+  text-align: center;
+}
+
+.image {
+  width: 250rpx;
+}
+
+.mid_view {
+  margin-top: 21rpx;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.bot_view {
+  margin: 15rpx 158rpx;
+}

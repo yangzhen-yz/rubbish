@@ -1,0 +1,29 @@
+<form bindsubmit="formSubmit">
+  <view class="field f15">
+    <text class="tx">原密码：</text>
+    <input cursor-spacing="150" name="password" placeholder-class="phcolor" class="login_input f15"
+      password="{{isShow}}" placeholder="请输入原密码" />
+    <image class="show_img" src="/images/index/close-eye.png" bindtap="open" wx:if="{{isShow}}" data-key="0" />
+    <image class="show_img" src="/images/index/open-eye.png" bindtap="close" wx:if="{{!isShow}}" data-key="0" />
+  </view>
+
+  <view class="field f15">
+    <text class="tx">新密码：</text>
+    <input id="newPassword" cursor-spacing="150" name="newPassword" placeholder-class="phcolor" class="login_input f15"
+      password="{{isShow1}}" placeholder="请输入新密码" />
+    <image class="show_img" src="/images/index/close-eye.png" bindtap="open" wx:if="{{isShow1}}" data-key="1" />
+    <image class="show_img" src="/images/index/open-eye.png" bindtap="close" wx:if="{{!isShow1}}" data-key="1" />
+  </view>
+
+  <view class="field f15">
+    <text class="tx">确认新密码：</text>
+    <input id="confirmPassword" cursor-spacing="150" name="confirmPassword" placeholder-class="phcolor"
+      class="login_input1 f15" password="{{isShow2}}" placeholder="请再次输入新密码" />
+    <image class="show_img" src="/images/index/close-eye.png" bindtap="open" wx:if="{{isShow2}}" data-key="2" />
+    <image class="show_img" src="/images/index/open-eye.png" bindtap="close" wx:if="{{!isShow2}}" data-key="2" />
+  </view>
+
+  <button class="btn_our bgColor f16" formType="submit">确认修改</button>
+</form>
+
+<view class="f13 fcolor btmView" bindtap="forgetOld">忘记旧密码</view>

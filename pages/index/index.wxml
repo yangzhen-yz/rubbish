@@ -1,0 +1,197 @@
+<view class="main">
+	<!-- <view> -->
+		<!-- <image class="location_img" src="" /> -->
+		<!-- <text class="f15 location_tx">{{city}}·{{district}}</text> -->
+		<!-- <image class="service_img" src="/images/index/service_phone.png" bindtap="toHelp" /> -->
+	<!-- </view> -->
+
+	<view>
+		<swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}"
+			duration="{{duration}}">
+			<block wx:for="{{bannerUrls}}" wx:if="{{bannerUrls!=''}}" wx:key="index">
+				<swiper-item>
+					<image style="height:180px;width:{{ImageWidth}}px" src="{{item}}" mode="aspectFill" />
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+
+	<view class='box0'>
+		<view class='color2 f15 swiper_w'>
+			<image src='/images/index/loudspeaker.png' class="img1" mode='widthFix' />
+
+			<swiper class='swiper-box' autoplay='{{true}}' interval='2000' vertical='{{true}}' circular='{{true}}'>
+				<swiper-item class='item' wx:for='{{errorDevices}}' class="fcolor1 f12">
+					{{item.community}}设备{{item.status}}，暂不能进行投递！
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+
+	<view class='content f16'>
+		<navigator hover-class="none" url="../guide/guide">
+			<view class='item_view'>
+				<image src='/images/index/basic.png' class='img' />
+				<view class='line'>入门指南</view>
+			</view>
+		</navigator>
+
+		<view class='item_view' bindtap="rubbishType">
+			<image src='/images/index/rubbish_type.png' class='img' />
+			<view class='line'>垃圾分类</view>
+		</view>
+
+		<view class='item_view' bindtap="orderRecycle">
+			<image src='/images/index/order_recycle.png' class='img' />
+			<view class='line'>预约回收</view>
+		</view>
+
+		<navigator hover-class="none" url="../book/book">
+			<view class='item_view'>
+				<image src='/images/index/book.png' class='img' />
+				<view class='line'>倡议书</view>
+			</view>
+		</navigator>
+	</view>
+
+	<view class="greenScore">
+		<image class="score_img" src="/images/index/integration.png" />
+		<text class="f15 pl5">我的环保积分</text>
+	</view>
+
+	<view class='box'>
+		<block wx:if="{{mid!=''}}">
+			<view class='left_view'>
+				<view>
+					<view class="current_score f16">当前积分</view>
+					<view class="score_detail">
+						<text class="f20">{{currentIntegral}}</text>
+						<text class="f14">分</text>
+					</view>
+				</view>
+
+				<view>
+					<view class="current_score f16">待入账积分</view>
+					<view class="score_detail">
+						<text class="f20">{{unenforcedIntegral}}</text>
+						<text class="f14">分</text>
+					</view>
+				</view>
+			</view>
+			<view class="right_view" bindtap="myIntegration">
+				<view class='color3 f14 box1'>
+					<view class="in_bk">我的积分</view>
+					<image class="right_img" src="/images/index/blue_right.png" />
+				</view>
+			</view>
+		</block>
+
+		<block wx:else>
+			<view>
+				<view class="f16">登录后可查看</view>
+			</view>
+			<view class="color3 f14 box1" bindtap="myIntegration">
+				<view class="in_bk">登录/注册</view>
+				<image class="right_img" src="/images/index/blue_right.png" />
+			</view>
+		</block>
+	</view>
+
+	<view class="equipment_view">
+		<view class="equipment_title">
+			<view class="left_equipment">
+				<image class="equipment_img" src="/images/index/equipment.png" />
+				<text class="f15 tx">附近回收机</text>
+			</view>
+
+			<view class="more_view" bindtap="moreDevice" data-key="1">
+				<view class="f13 gcolor">更多</view>
+				<image src='/images/index/right.png' class="rightImg" />
+			</view>
+		</view>
+
+		<view class="bg_view">
+			<image class="bg_img" src="/images/index/bg_map.png" />
+			<block wx:if="{{nearbyDevice!=''}}">
+				<view class="left_view1">
+					<block wx:if="{{nearbyDevice.community!=null}}">
+						<view class="position_tx f16 f_w">{{nearbyDevice.community}}</view>
+					</block>
+
+					<block wx:if="{{nearbyDevice.status!=null}}">
+						<view class="status_tx bdColor color3">{{nearbyDevice.status}}</view>
+					</block>
+
+					<block wx:if="{{nearbyDevice.address!=null}}">
+						<view class="positon_detail1 f13">{{nearbyDevice.address}}</view>
+					</block>
+				</view>
+
+				<view class="right_view1" bindtap="toLocation">
+					<image class="positon_img" src="/images/index/position.png" />
+					<view class="f12 gcolor">导航到此</view>
+				</view>
+			</block>
+
+			<block wx:else>
+				<view class="f16 noData">附近暂无回收机</view>
+			</block>
+		</view>
+	</view>
+
+	<view class='recentNew'>
+		<view class="news_view">
+			<image class="recycle_img" src="/images/index/news.png " />
+			<text class='color pl f15'>最新资讯</text>
+		</view>
+
+		<view class="more_view">
+			<text class='f13 gcolor' bindtap='moreNews'>更多</text>
+			<image class="rightImg pl5" src="/images/index/right.png" />
+		</view>
+	</view>
+
+	<block wx:for="{{newArticles}}" wx:for-item="item" wx:key="item.id" wx:if="{{item!=null}}">
+		<navigator url="../newdetail/newdetail?articleId={{item.articleId}}" hover-class="none">
+			<view class='news_content'>
+				<view class="news_title">
+					<view class='f_w color f16 title'>{{item.title}}</view>
+					<view class="f13 color1">{{item.create_time}}</view>
+				</view>
+
+				<view class="newsImg_view">
+					<image src='{{item.img_small}}' class="newsImg" />
+				</view>
+			</view>
+		</navigator>
+	</block>
+
+	<view class='appoint f16' bindtap="calling">
+		<image src='/images/index/phone.png' class='phone' />
+	</view>
+
+	<include src="foot.wxml" />
+</view>
+
+<!-- 弹出完善信息 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}"></view>
+
+<view class="modalDlg modalOut" wx:if="{{showModal1}}">
+	<image src="/images/index/info.png" mode="widthFix" class="to_perfect" bindtap='go' />
+	<view class='center re1' close_view>
+		<image src="/images/index/close.png" mode="widthFix" style='width:10%;' bindtap='close' />
+	</view>
+</view>
+
+<!-- 底部导航 -->
+<view class="tabbar_box"
+	style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}}">
+	<block wx:for="{{tabbar.list}}" wx:for-item="item" wx:key="index">
+		<navigator class="tabbar_nav" url="{{item.pagePath}}"
+			style="width:{{1/tabbar.list.length*100}}%; color:{{item.selected ? tabbar.selectedColor : tabbar.color}}"
+			open-type="redirect" hover-class="none">
+			<image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}" />
+			<text>{{item.text}}</text>
+		</navigator>
+	</block>
+</view>

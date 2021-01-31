@@ -1,0 +1,6 @@
+<view class='center' style='margin-top:20%'>
+  <image src="/images/user/ye.png" style='width:124pt;height:64pt'/>
+  <view>提交成功</view>
+  <view class='line f14 color4'>感谢您的意见反馈哦~</view>
+  <button class='f16' class="btn bgColor"  bindtap='back'>返回</button>
+</view>

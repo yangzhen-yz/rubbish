@@ -1,0 +1,9 @@
+<view class='num center'>
+  <image src="/images/user/num.png" class='num_img'/>
+  <view class="score_tx">可用环保积分余额</view>
+  <view class="score">{{myScore}}</view>
+  <view class='withDraw_tx bgColor f18' bindtap="withdraw">积分提现</view>
+  <navigator hover-class="none" url="../integral/integral">
+    <view class='record_tx color3 bdColor f18'>积分记录</view>
+  </navigator>
+</view>

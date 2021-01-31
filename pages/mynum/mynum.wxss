@@ -1,0 +1,38 @@
+/* pages/mynum/mynum.wxss */
+page {
+  background-color: #FFFFFF;
+}
+
+.num {
+  margin-top: 180rpx;
+}
+
+.num_img {
+  width: 269rpx;
+  height: 218rpx
+}
+
+.score_tx {
+  font-size: 30rpx;
+  margin-top: 45rpx;
+}
+
+.score {
+  font-size: 137rpx;
+}
+
+.withDraw_tx {
+  color: #fff;
+  line-height: 87rpx;
+  margin: 60rpx 50rpx 32rpx 50rpx;
+  height: 87rpx;
+  border-radius: 44rpx;
+}
+
+.record_tx {
+  background: #fff;
+  line-height: 87rpx;
+  margin: auto 50rpx;
+  height: 87rpx;
+  border-radius: 44rpx;
+}

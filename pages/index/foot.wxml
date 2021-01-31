@@ -1,0 +1,7 @@
+<view class='center mar f13 color2 line2'>
+  <view>备案号：晋ICP备18011299号</view>
+  <view>技术支持@晋城市鼎峰网络科技有限公司</view>
+  <view bindtap="calling">
+    客服电话：<text>{{phonedata}}</text>
+  </view>
+</view>

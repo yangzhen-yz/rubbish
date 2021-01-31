@@ -1,0 +1,33 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.avatarImg {
+  width: 86rpx;
+  height: 86rpx;
+}
+
+.info_view {
+  height: 149rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #F4F4F4;
+  margin: 0 42rpx;
+}
+
+.info_view1 {
+  height: 136rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #F4F4F4;
+  margin: 0 42rpx;
+}
+
+.right_img {
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 17rpx;
+}
+

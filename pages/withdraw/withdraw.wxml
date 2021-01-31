@@ -1,0 +1,53 @@
+<form bindsubmit="formSubmit">
+  <view class="bg_img_view">
+    <image class="bg_img" src="/images/user/bg.png" />
+    <view class="f14 center canUser_score">当前可用积分</view>
+    <view class="f29 center wcolor">{{currentIntegral}}</view>
+  </view>
+
+  <view class='content_view'>
+    <view class="content">
+      <view class="column color7"></view>
+      <view class=" withdraw">
+        <text class="withdraw_title f16">提现金额(元)</text>
+      </view>
+
+      <view class="money_view">
+        <text class='bold icon f38'>¥</text>
+        <input id="money" name="money" placeholder-class="f22" class="login-input f18 dis" type="number" disabled="true"
+          value="{{withdrawMoney}}" placeholder="请选择提现金额" />
+        <view class="line1"></view>
+
+        <view class="item_detail f15" wx:for="{{moneyList}}" bindtap="selectMoney" wx:for-item="item"
+          data-item="{{item.id}}">
+          <block wx:if="{{select==item.id && isShow }}">
+            <image src="/images/type/xz.png" class="img1" />
+          </block>
+          <view class="money_tx">{{item.name}}</view>
+        </view>
+
+        <view class="line1"></view>
+
+        <view class="column1 color7"></view>
+        <view class="withdraw1">
+          <text class="withdraw_title f16">提现方式</text>
+          <text class="f16  wallet ">提现至微信钱包</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ruleView">
+    <button class="f16" wx:if="{{!disabled}}" formType="submit" class="btn bgColor f18">确认提现</button>
+    <button class="f16" wx:if="{{disabled}}" class="btn bgColor f18">确认提现</button>
+    <view class='color4 f16 line pt10'>积分提现规则：</view>
+    <view class='color4 f14 line' wx:for="{{rule}}">
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <view class="phone_view">
+    <text class="color4 f15">客服电话：</text>
+    <text class="color3 f15">{{phonedata}}</text>
+  </view>
+</form>

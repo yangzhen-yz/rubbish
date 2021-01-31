@@ -1,0 +1,60 @@
+<view>
+  <view class="top f28 f_w">
+    <text class="pl21 ">提现金额</text>
+    <text class="withdraw_tx1  color3">{{moneyDetail.money}}元</text>
+  </view>
+  <view class="account_date f13">预计1-2个工作日到账</view>
+  <view class="line1"></view>
+
+  <view class="withdraw_view">
+    <text class="f17 f_w ">提现进度</text>
+    <text class="f14 grayColor">{{moneyDetail.cashout_time}}</text>
+  </view>
+
+  <view class="process_view">
+    <view class="left_view">
+      <image class="img1 mtop73" src="/images/icon/finish.png" />
+      <view class="column bgColor"></view>
+      <image class="img1" src="/images/icon/finish.png" />
+
+      <block wx:if="{{moneyDetail.status==1||moneyDetail.status==2}}">
+        <view class="column bgColor"></view>
+        <image class="img1" src="/images/icon/finish.png" />
+      </block>
+      <block wx:else>
+        <view class="column1"></view>
+        <image class="img1" src="/images/icon/gary_circle.png" />
+      </block>
+    </view>
+
+    <view class="right_view">
+      <view class="process_item">
+        <view class="f14 ">提交成功</view>
+        <view class="f12 grayColor">申请提交成功请到 “我的” - “提现记录” 中查看</view>
+      </view>
+
+      <view class="process_item mtop50">
+        <view class="f14">处理中</view>
+        <view class="f12 grayColor">请耐心等待</view>
+      </view>
+
+      <view class="process_item mtop50">
+        <block wx:if="{{moneyDetail.status==2}}">
+          <view class="f14">提现未通过</view>
+          <view class="f12 grayColor">{{moneyDetail.reason}}</view>
+        </block>
+        <block wx:else>
+          <view class="f14">提现成功</view>
+          <view class="f12 grayColor">已成功提现 <block wx:if="{{moneyDetail.status!=1}}">，预计1-2个工作日到账</block>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{moneyDetail.is_pay==null}}">
+    <view bindtap='backIndex'>
+      <button class="btn bgColor f18">完成</button>
+    </view>
+  </block>
+</view>

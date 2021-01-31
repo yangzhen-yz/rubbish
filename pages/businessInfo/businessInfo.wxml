@@ -1,0 +1,50 @@
+<block wx:if="{{userInfo.status==0}}">
+  <view class="status bgColor f17">审核中</view>
+</block>
+
+<view class="f15">
+  <view class="item_view">
+    <view>门店照片</view>
+    <image src="{{userInfo.store_pic}}" class="shop_img" />
+  </view>
+
+  <view class="item_view1">
+    <view>
+      <text>门店地址</text>
+    </view>
+
+    <view class="address_tx">
+      {{userInfo.address}}
+    </view>
+  </view>
+
+  <view class="item_view1">
+    <view>法人姓名</view>
+    <text>{{userInfo.legal_person}}</text>
+  </view>
+
+  <view class="item_view1">
+    <view>联系人姓名</view>
+    <text>{{userInfo.contacts_name}}</text>
+  </view>
+
+  <view class="item_view1">
+    <view>联系人电话</view>
+    <text>{{userInfo.contacts_phone}}</text>
+  </view>
+
+  <view class="item_view3">
+    <view>联系人身份证照片</view>
+    <view class="img_view">
+      <image src="{{userInfo.id_pic_figure}}" class="img" />
+      <image src="{{userInfo.id_pic_front}}" class="img pl30" />
+    </view>
+  </view>
+
+  <view class="item_view3">
+    <view>营业执照副本</view>
+    <view class="img_view pb">
+      <image src="{{userInfo.business_license}}" class="img" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,150 @@
+<scroll-view scroll-x="true">
+  <view class="tab-h f16 bgColor">
+    <view class="tab-item {{currentTab==1?'active':''}} f16" data-current="1" bindtap="swichNav">全部预约</view>
+    <view class="tab-item {{currentTab==2?'active':''}} f16" data-current="2" bindtap="swichNav">未处理</view>
+    <view class="tab-item {{currentTab==4?'active':''}} f16" data-current="4" bindtap="swichNav">处理中</view>
+    <view class="tab-item {{currentTab==3?'active':''}} f16" data-current="3" bindtap="swichNav">已入账</view>
+    <view class="tab-item {{currentTab==5?'active':''}} f16" data-current="5" bindtap="swichNav">已驳回</view>
+  </view>
+</scroll-view>
+
+<view class="date_view">
+  <picker mode="date" fields="month" bindchange="bindDateChange">
+    <view>
+      {{year}}年{{month}}月
+    </view>
+  </picker>
+</view>
+
+<view class="content_view">
+  <scroll-view class="scrollview" scroll-y="true">
+    <block wx:for="{{orderdata}}" wx:if="{{orderdata.length>0}}">
+      <navigator url="../orderDetail/orderDetail?data1={{item.reserveId}}" hover-class="none">
+        <view class="list_view">
+          <view class="list">
+            <view class="flexView">
+              <block wx:if="{{item.status=='1' }}">
+                <image class="img" src="/images/icon/red.png" />
+                <text class="tx color7">待受理</text>
+              </block>
+
+              <block wx:if="{{item.status=='2' }}">
+                <image class="img" src="/images/icon/less_green.png" />
+                <text class="tx color6">已接单</text>
+              </block>
+
+              <block wx:if="{{item.status=='3' }}">
+                <image class="img" src="/images/icon/blue.png" />
+                <text class="tx color3">已入账</text>
+              </block>
+
+              <block wx:if="{{item.status=='4' }}">
+                <image class="img" src="/images/icon/yellow.png" />
+                <text class="tx color8">已取消</text>
+              </block>
+
+              <block wx:if="{{item.status=='5' }}">
+                <image class="img" src="/images/icon/yellow.png" />
+                <text class="tx color8">处理中</text>
+              </block>
+
+              <block wx:if="{{item.status=='6' }}">
+                <image class="img" src="/images/icon/red.png" />
+                <text class="tx color7">已驳回</text>
+              </block>
+            </view>
+
+            <block wx:if="{{item.status!='3' }}">
+              <view class="flexView f14">
+                <text class="pr">请耐心等待</text>
+                <image class="img1" src="/images/index/right.png" />
+              </view>
+            </block>
+          </view>
+          <view class="line_view"></view>
+          <view class="detail_view f14">
+            <view class="item_view">
+              <text>废品种类</text>
+              <text>{{item.rubbishTypes}}</text>
+            </view>
+
+            <view class="item_view">
+              <text>提交时间</text>
+              <text>{{item.createTime}}</text>
+            </view>
+          </view>
+
+          <view class="line_view1"></view>
+
+          <block wx:if="{{item.status==1}}">
+            <view class="cancelBtn"catchtap="cancelOrder" data-key="{{item.reserveId}}">
+              <button class="btn bdColor1 f13 color7">取消预约</button>
+            </view>
+          </block>
+
+          <block wx:if="{{item.status==2}}">
+            <view class="receive f14 f_w">
+              <view>接单人员</view>
+              <view>
+                <text class="pr20">{{item.staffName}}</text>
+                <text>{{item.staffPhone}}</text>
+              </view>
+            </view>
+          </block>
+
+          <block wx:if="{{item.status==3}}">
+            <view class="receive">
+              <view class="f14 f_w">已入账总积分</view>
+              <view class="flexView">
+                <block wx:if="{{item.integral!=null}}">
+                  <view class="f17 f_w pr">{{item.integral}}</view>
+                </block>
+                <block wx:else>
+                  <view class="f17 f_w pr">0</view>
+                </block>
+                <view class="f10">积分</view>
+              </view>
+            </view>
+          </block>
+
+          <block wx:if="{{item.status==5}}">
+            <view class="receive">
+              <view class="f14 f_w">处理中总积分</view>
+              <view class="flexView">
+                <block wx:if="{{item.integral!=null}}">
+                  <view class="f17 f_w pr">{{item.integral}}</view>
+                </block>
+                <block wx:else>
+                  <view class="f17 f_w pr">0</view>
+                </block>
+                <view class="f10">积分</view>
+              </view>
+            </view>
+          </block>
+
+        </view>
+      </navigator>
+    </block>
+
+    <block wx:if="{{orderdata.length==0}}">
+      <view class='center' style='padding-top:30%'>
+        <image src='/images/index/no_log.png' mode="widthFix" style="width:40%" />
+        <view class='line color4 f14'>暂无记录</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="tabbar_box"
+  style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}}">
+  <block wx:for="{{tabbar.list}}" wx:for-item="item" wx:key="index">
+    <navigator class="tabbar_nav" url="{{item.pagePath}}"
+      style="width:{{1/tabbar.list.length*100}}%; color:{{item.selected ? tabbar.selectedColor : tabbar.color}}"
+      open-type="redirect">
+      <view class="flexView">
+        <image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}" />
+        <text>{{item.text}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>

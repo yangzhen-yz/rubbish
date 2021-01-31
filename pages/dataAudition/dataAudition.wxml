@@ -1,0 +1,29 @@
+<view class="top">
+  <view class="processView">
+    <image class="img" src="/images/icon/gray_one.png" />
+    <view class="line1 line_color"></view>
+
+    <image class="img" src="/images/icon/two.png" />
+    <view class="line1 line_color"></view>
+
+    <image class="img" src="/images/icon/gray_three.png" />
+  </view>
+
+  <view class="process_tx">
+    <text class="f12">资料填写</text>
+    <text class="f12 color3">资料审核</text>
+    <text class="f12">完成申请</text>
+  </view>
+</view>
+<view class="mid">
+  <image class="img1" src="/images/icon/audit.png" />
+</view>
+<view class="result">
+  <view class="f20 color3">您的申请已提交！</view>
+  <view class="f14 fcolor tx">预计3个工作日内审核完毕，可在<label class="color3">个人中心</label></view>
+  <view class="f14 fcolor">页面查看审核结果</view>
+</view>
+
+<view class="btm" bindtap="back">
+  <button class="btn bgColor f14">返回</button>
+</view>

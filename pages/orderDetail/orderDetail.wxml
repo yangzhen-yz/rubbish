@@ -1,0 +1,203 @@
+<view class='color4'>
+  <view class="order_status f_w">订单状态:</view>
+  <block wx:if="{{orderDetail.status==1}}">
+    <view class="order_status_detail">待受理</view>
+    <view class="order_status_extra">订单暂未被回收员接单,请耐心等待</view>
+  </block>
+
+  <block wx:if="{{orderDetail.status==2}}">
+    <view class="order_status_detail">已接单</view>
+    <view class="order_status_extra">订单已被回收员接单,请耐心等待工作人员上门</view>
+  </block>
+
+  <block wx:if="{{orderDetail.status==3}}">
+    <view class="order_status_detail">已入账</view>
+    <view class="order_status_extra">本次订单成功完成,欢迎再次预约</view>
+  </block>
+
+  <block wx:if="{{orderDetail.status==4}}">
+    <view class="order_status_detail">已取消</view>
+    <view class="order_status_extra">本次订单已取消,欢迎再次预约</view>
+  </block>
+
+  <block wx:if="{{orderDetail.status==5}}">
+    <view class="order_status_detail">处理中</view>
+    <view class="order_status_extra">本次订单正在处理,请稍等</view>
+  </block>
+
+  <block wx:if="{{orderDetail.status==6}}">
+    <view class="order_status_detail">已驳回</view>
+    <view class="order_status_extra">本次订单异常,已被驳回，详情请联系客服</view>
+  </block>
+
+</view>
+
+<view class="list f16">
+  <scroll-view class="scrollview" scroll-y="{{scroll_y}}">
+    <view class="order_content">
+      <view class="flexView">
+        <view class="img1_view">
+          <image class="img1" src="/images/index/qishou.png" />
+        </view>
+
+        <view class="recycle_people f_w f15" wx:if="{{orderDetail.status==1}}">回收员暂未接单</view>
+        <view class="recycle_people f_w f15" wx:if="{{orderDetail.status==4}}">您已取消此订单</view>
+
+        <block wx:if="{{orderDetail.status !=1&&orderDetail.status!=4}}">
+          <view class="recycle_people f_w f15">
+            <view class="people_tx">
+              <view>回收员:</view>
+              <block wx:if="{{orderDetail.staffName!=null}}">
+                <view>{{orderDetail.staffName}}</view>
+              </block>
+            </view>
+            <view class="reserve_phone">
+              <block wx:if="{{orderDetail.staffPhone!=null}}">
+                <view>{{orderDetail.staffPhone}}</view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class="line1"></view>
+
+      <view class="recycle_type f_w">回收种类</view>
+
+      <view wx:for="{{staffImg}}">
+        <view class="item1">
+          <view class="item1_left">
+            <image class="item1Img" src="{{item.img_url}}" />
+            <view class="pl24">
+              <view class="item1_tx">{{item.rubbish_type}}</view>
+              <block wx:if="{{orderDetail.status==3||orderDetail.status==5||orderDetail.status==6}}">
+                <view class="item1_tx f14 color1">{{item.price}}积分/{{item.unit}}</view>
+              </block>
+            </view>
+          </view>
+
+          <view class="f15">
+            <block wx:if="{{orderDetail.status==1||orderDetail.status==2||orderDetail.status==4}}">
+              <text class="f14">{{item.price}}积分/{{item.unit}}</text>
+            </block>
+            <block wx:else>
+              <text class="f14">{{item.weight}}{{item.unit}}</text>
+            </block>
+          </view>
+        </view>
+
+        <block wx:if="{{orderDetail.status==3||orderDetail.status==5||orderDetail.status==6}}">
+          <v-staff-img list="{{item}}">
+          </v-staff-img>
+        </block>
+      </view>
+
+      <view class="score_view">
+        <block wx:if="{{orderDetail.status ==3||orderDetail.status==5||orderDetail.status==6}}">
+          <view class="item_view">
+            <view>
+              <text class="f14">应入账积分：</text>
+            </view>
+            <view>
+              <block wx:if="{{orderDetail.price!=null}}">
+                <text class="f19 f_w pr8">{{orderDetail.price}}</text>
+              </block>
+              <text class="f10">积分</text>
+            </view>
+          </view>
+
+          <view class="item_view">
+            <view>
+              <text class="f14">服务费积分：</text>
+            </view>
+            <view>
+              <block wx:if="{{orderDetail.cost!=null}}">
+                <text class="f19 f_w pr8">-{{orderDetail.cost}}</text>
+              </block>
+              <text class="f10">积分</text>
+            </view>
+          </view>
+        </block>
+
+        <view class="item_view pbt">
+          <view class=" f14 f_w">核计入账积分：</view>
+
+          <block wx:if="{{orderDetail.integral!=null}}">
+            <view class="color3">
+              <text class="f19 pr8 f_w">{{orderDetail.integral}}</text>
+              <text class="f10">积分</text>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="color3">
+              <text class="f19 pr8">0</text>
+              <text class="f10">积分</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="list1 clearfix">
+  <view class='order_info f17 f_w'>预约信息</view>
+
+  <view class="line1"></view>
+
+  <view class="phone_view">
+    <view class="f14 fcolor">联系电话</view>
+    <view class="f14">
+      <text>{{orderDetail.phone}}</text>
+    </view>
+  </view>
+
+  <view class="address_view">
+    <view class="f14 fcolor item_address">详细住址</view>
+    <view class="f14 item_detail1" auto-height>
+      <textarea auto-height="true" disabled="true">{{orderDetail.address}}</textarea>
+    </view>
+  </view>
+
+  <view class="massage">
+    <view class="f14 fcolor item_note">留言</view>
+    <block wx:if="{{orderDetail.message!=null}}">
+      <view class="f14">{{orderDetail.message}}</view>
+    </block>
+  </view>
+
+  <view class="myPicture_view">
+    <view class="f14 fcolor item_picture">提交照片</view>
+    <view class="myPictures">
+      <view class="myPicture" wx:for="{{orderDetail.picList}}">
+        <image class="img2" src="{{item}}" bindtap="previewImg" data-item="{{item}}" mode="widthFix" />
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="list1" wx:if="{{orderDetail.reason!=null}}">
+  <view class="order_info f17 f_w">驳回理由</view>
+  <view class="line1"></view>
+  <view class="f14 reasonView">{{orderDetail.reason}}</view>
+</view>
+
+
+<view class="btm_view">
+  <view class="order_info f17 f_w">订单信息</view>
+  <view class="line1"></view>
+  <view class="btm_view1">
+    <view class="f14 fcolor">下单时间</view>
+    <view class="f14 fcolor">{{orderDetail.create_time}}</view>
+  </view>
+  <view class="btm_view1">
+    <view class="f14 fcolor">订单编号</view>
+    <view class="f14 fcolor">{{orderDetail.reserve_no}}</view>
+  </view>
+  <block wx:if="{{orderDetail.status==3||orderDetail.status==6}}">
+    <view class="btm_view1">
+      <view class="f14 fcolor">完成时间</view>
+      <view class="f14 fcolor">{{orderDetail.complete_time}}</view>
+    </view>
+  </block>
+</view>

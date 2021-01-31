@@ -1,0 +1,151 @@
+<view class="top bgColor">
+	<view class="tab-item0 f16 {{currentTab1 ==3 ? 'active0' : '' }}" data-current1="3" bindtap="switchTab">
+		机柜投递
+	</view>
+	<view class="tab-item0 f16 {{currentTab1 ==4 ? 'active0' : '' }}" data-current1="4" bindtap="switchTab">
+		上门回收
+	</view>
+</view>
+
+<view class="top1" wx:if="{{isShow}}">
+	<view class="tab-item {{currentTab==0?'active':''}} f16" data-current="0" bindtap="swichNav">待审核</view>
+	<view class="tab-item {{currentTab==1?'active':''}} f16" data-current="1" bindtap="swichNav">已入账</view>
+	<view class="tab-item {{currentTab==2?'active':''}} f16" data-current="2" bindtap="swichNav">未通过</view>
+</view>
+
+<view class="yearView f13" wx:if="{{isShow}}">
+	<picker mode="date" fields="month" bindchange="bindDateChange" data-picker="{{0}}">	{{year}}年{{month}}月</picker>
+</view>
+
+<view class="date_view" wx:if="{{!isShow}}">
+	<picker mode="date" fields="month" bindchange="bindDateChange" data-picker="{{1}}">
+		<view class="f13">
+			{{year}}年{{month}}月
+		</view>
+	</picker>
+</view>
+
+<view>
+	<block wx:if="{{currentTab1==3}}">
+		<block wx:if="{{integralData.length==0 }}">
+			<view class='center' style='padding-top:30%'>
+				<image src='/images/index/no_log.png' mode="widthFix" style="width:40%" />
+				<view class='line color4 f14'>暂无记录</view>
+			</view>
+		</block>
+
+		<block wx:else>
+			<scroll-view class="scrollview" scroll-y="{{scroll_y}}">
+				<view wx:for="{{integralData}}" wx:for-item="item" data-key="{{item.deliveryId}}" class="items"
+					bindtap="integralDetail">
+
+					<view class="title1">
+						<view class="status_view">
+							<block wx:if="{{currentTab==0}}">
+								<image src="/images/icon/yellow.png" class="statusImg" />
+								<view class="f14 f_w color8 pl5">{{item.check_state}}</view>
+							</block>
+
+							<block wx:if="{{currentTab==1}}">
+								<image src="/images/icon/blue.png" class="statusImg" />
+								<view class="f14 f_w color3 pl5">{{item.check_state}}</view>
+							</block>
+
+							<block wx:if="{{currentTab==2}}">
+								<image src="/images/icon/red.png" class="statusImg" />
+								<view class="f14 f_w color7 pl5">{{item.check_state}}</view>
+							</block>
+						</view>
+						<view class="f13 color1">
+							<view>{{item.deliveryTimeStr}}</view>
+						</view>
+					</view>
+
+					<view class="item1">
+						<view class='color1'>废品种类</view>
+						<block wx:if="{{item.rubbishType!=null}}">
+							<view>{{item.rubbishType}}</view>
+						</block>
+					</view>
+
+					<block wx:if="{{item.weight!=0}}">
+						<view class='item1 btm1'>
+							<text class="color1">废品总重量</text>
+							<text>{{item.weight}}/kg</text>
+						</view>
+					</block>
+
+					<block wx:else>
+						<view class='item1 btm1'>
+							<text class="color1">废品数量</text>
+							<block wx:if="{{bottle_count!=0}}">
+								<text>{{bottle_count}}/个</text>
+							</block>
+							<!-- <block wx:else>
+								<text>0/个</text>
+							</block> -->
+						</view>
+					</block>
+
+					<view class="item2">
+						<block wx:if="{{currentTab==1}}">
+							<view class=" f14 color1 f_w">已入账总积分</view>
+						</block>
+						<block wx:else>
+							<view class=" f14 color1 f_w">待入账总积分</view>
+						</block>
+						<view class="status_view">
+							<view class="f17 f_w mr7">+{{item.integral}}</view>
+							<view class="f10">积分</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</block>
+	</block>
+
+	<block wx:if="{{currentTab1==4}}">
+		<block wx:if="{{recycleList.length==0 }}">
+			<view class='center' style='padding-top:30%'>
+				<image src='/images/index/no_log.png' mode="widthFix" style="width:40%" />
+				<view class='line color4 f14'>暂无记录</view>
+			</view>
+		</block>
+
+		<block wx:else>
+			<scroll-view class="scrollview" scroll-y="{{scroll_y}}">
+				<view wx:for="{{recycleList}}" wx:for-item="item" data-key="{{item.reserveId}}" class="items"
+					bindtap="integralDetail1">
+					<view class="title1">
+						<view class="status_view">
+							<image src="/images/icon/blue.png" class="statusImg" />
+							<view class="f14 f_w color3 pl5">已入账</view>
+						</view>
+						<view>
+							<image class="rightImg" src="/images/index/right.png" />
+						</view>
+					</view>
+
+					<view class="item1">
+						<view class='color1'>废品种类</view>
+						<view>{{item.rubbishTypes}}</view>
+					</view>
+
+					<view class='item1 btm1'>
+						<text class="color1">提交时间</text>
+						<text>{{item.createTime}}</text>
+					</view>
+
+					<view class="item2">
+						<view class=" f14 color1 f_w">已入账总积分</view>
+						<view class="status_view">
+							<view class="f17 f_w mr7">+{{item.integral}}</view>
+							<view class="f10">积分</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</block>
+
+	</block>
+</view>

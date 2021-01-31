@@ -1,0 +1,35 @@
+page {
+  background-color: #FFFFFF !important;
+}
+
+.top {
+  margin-left: 29rpx;
+  padding-top: 52rpx;
+}
+
+.ruler {
+  margin-top: 42rpx;
+  margin-left: 29rpx;
+}
+
+.ruler_tx {
+  margin-top: 24rpx;
+}
+
+.btm_view {
+  margin-top: 169rpx;
+}
+
+.box2 {
+  background-color: #FFFFFF;
+  margin: 28rpx;
+  border: solid 1rpx #F4F4F4;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 9rpx 14rpx #f4f4f4;
+  padding: 32rpx 26rpx 26rpx 26rpx;
+  margin-bottom: 130rpx;
+}
+
+.scrollView {
+  height: 500rpx;
+}

@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/guide/guide",
+    "pages/rubbishType/rubbishType",
+    "pages/orderRecycle/orderRecycle",
+    "pages/applyPrompt/applyPrompt",
+    "pages/applyBusiness/applyBusiness",
+    "pages/businessInfo/businessInfo",
+    "pages/dataAudition/dataAudition",
+    "pages/finishAudition/finishAudition",
+    "pages/appForm/appForm",
+    "pages/applySuccess/applySuccess",
+    "pages/orderSuccess/orderSuccess",
+    "pages/book/book",
+    "pages/mynum/mynum",
+    "pages/withdraw/withdraw",
+    "pages/newsList/newsList",
+    "pages/newdetail/newdetail",
+    "pages/about/about",
+    "pages/equipmentList/equipmentList",
+    "pages/equipmentDetail/equipmentDetail",
+    "pages/rank/rank",
+    "pages/user/user",
+    "pages/selfInfo/selfInfo",
+    "pages/gradeDescription/gradeDescription",
+    "pages/integral/integral",
+    "pages/integralDetail/integralDetail",
+    "pages/withdrawRecord/withdrawRecord",
+    "pages/withdrawSuccess/withdrawSuccess",
+    "pages/rewards/rewards",
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/perfectInfo/perfectInfo",
+    "pages/editpwd/editpwd",
+    "pages/feedback/feedback",
+    "pages/feedbackSuccess/feedbackSuccess",
+    "pages/feedbackList/feedbackList",
+    "pages/feedbackDetail/feedbackDetail",
+    "pages/proCenter/proCenter",
+    "pages/customerService/customerService",
+    "pages/bindPhone/bindPhone",
+    "pages/bindWx/bindWx",
+    "pages/unbindWx/unbindWx",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/editPhone/editPhone",
+    "pages/forgetpwd/forgetpwd",
+   
+    "pages/typeDetail/typeDetail",
+    "pages/realname/realname",
+    "pages/logs/logs",
+    "pages/erweima/erweima",
+    "pages/xuzhi/xuzhi",
+    "components/newPrice/newPrice"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

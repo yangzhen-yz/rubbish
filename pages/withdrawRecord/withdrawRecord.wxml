@@ -1,0 +1,28 @@
+<view class="tab-h bgColor f16">
+  <view class="tab-item {{currentTab==0?'active':''}} f16" data-current="0" bindtap="swichNav">待审核</view>
+  <view class="tab-item {{currentTab==1?'active':''}} f16" data-current="1" bindtap="swichNav">待支付</view>
+  <view class="tab-item {{currentTab==3?'active':''}} f16" data-current="3" bindtap="swichNav">已支付</view>
+  <view class="tab-item {{currentTab==2?'active':''}} f16" data-current="2" bindtap="swichNav">未通过</view>
+</view>
+
+<scroll-view scroll-y="true" class="scrollView">
+  <view class="item_view" wx:for="{{withdrawData}}" wx:if="{{withdrawData.length>0}}" bindtap="toDetail"
+    data-key="{{item.cashoutId}}">
+    <view class="f15 top_view">
+      <text>{{item.money}}元现金</text>
+      <text class="color3">-{{item.integral}}积分</text>
+    </view>
+
+    <view class="fcolor1 f13 bottom_view">
+      <text>{{item.cashout_time}}</text>
+      <text>{{item.check_state}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{withdrawData.length==0}}">
+    <view class='center' style='padding-top:30%'>
+      <image src='/images/index/no_log.png' mode="widthFix" style="width:40%" />
+      <view class='line color4 f14'>暂无记录</view>
+    </view>
+  </view>
+</scroll-view>

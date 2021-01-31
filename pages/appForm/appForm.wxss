@@ -1,0 +1,295 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #F5F5F5;
+  width: 100%;
+}
+
+.form {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.type_view {
+  display: flex;
+  height: 89rpx;
+  margin: 0 28rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #F4F4F4;
+}
+
+.selfInfo {
+  display: flex;
+  align-items: center;
+  height: 89rpx;
+  margin-left: 28rpx;
+}
+
+.img2 {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.pl8 {
+  padding-left: 16rpx;
+}
+
+.bor {
+  border-bottom: 1px solid #F4F4F4
+}
+
+.bor1 {
+  margin: 18rpx 0rpx;
+  padding: 0 57rpx 18rpx 27rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F4F4F4
+}
+
+.line {
+  padding: 21rpx 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  border-radius: 0;
+}
+
+.shade-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  justify-content: space-around;
+  z-index: 9999999;
+}
+
+.hide-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: -200%;
+  z-index: 9999999;
+  justify-content: space-between;
+}
+
+.left-shade {
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.right-choose {
+  height: 50%;
+  background-color: #fff;
+  overflow-y: scroll
+}
+
+.picker-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 10rpx 0 20rpx 0;
+}
+
+.picker-container::-webkit-scrollbar {
+  display: none;
+}
+
+.size {
+  background: #F5F5F5;
+  width: 145rpx;
+  height: 145rpx;
+}
+
+.picker-item {
+  float: left;
+  padding: 6pt 0;
+  background: #fff;
+  font-size: 30rpx;
+  margin: 5rpx 50rpx
+}
+
+.picker-item-choose {
+  border: 1px solid #47AED3
+}
+
+.button-container {
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.phone-input {
+  width: 76%;
+  padding-left: 39rpx
+}
+
+.address-input {
+  width: 70%;
+  vertical-align: middle;
+  padding-left: 39rpx;
+  height: 28px
+}
+
+.btn {
+  width: 100%;
+  color: #fff;
+  line-height: 2.8;
+  position: fixed;
+  bottom: 0
+}
+
+.phone_view {
+  height: 87rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 28rpx;
+}
+
+.note-view {
+  padding: 70rpx 28rpx;
+  text-align: justify;
+}
+
+.link-phone {
+  border-right: 1rpx solid #E5E5E5;
+  padding-right: 10rpx;
+}
+
+textarea {
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+
+.picture-view {
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding-top: 22rpx
+}
+
+.btn1 {
+  width: 250rpx !important;
+  height: 64rpx;
+  border-radius: 100rpx;
+  color: #ffffff;
+  font-size: 28rpx;
+  line-height: 64rpx;
+}
+
+.picture-input {
+  font-size: 28rpx;
+  margin-left: 28rpx;
+  margin-top: 12rpx;
+}
+
+.tx {
+  font-size: 32rpx;
+  padding-left: 28rpx;
+}
+
+.line1 {
+  height: 1rpx;
+  background-color: #F4F4F4;
+  margin: 21rpx 29rpx 3.08rpx 29rpx;
+}
+
+.tx2 {
+  text-align: left;
+}
+
+.note-content {
+  font-size: 28rpx;
+}
+
+.item-name {
+  margin-top: 13rpx
+}
+
+.select-img {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  margin-top: -34rpx;
+  margin-left: 110rpx;
+}
+
+.thumb {
+  width: 134rpx;
+  height: 134rpx;
+}
+
+.img_view {
+  display: inline-block;
+  margin-left: 42rpx;
+  margin-top: 24rpx;
+}
+
+.close {
+  width: 25rpx;
+  height: 25rpx;
+  position: absolute;
+  margin-left: -10rpx;
+  margin-top: -10rpx;
+}
+
+.service_view {
+  height: 88rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.questionImg {
+  width: 31rpx;
+  height: 31rpx;
+}
+
+.service_tx {
+  display: inline-block;
+  font-size: 32rpx;
+  margin-left: 28rpx;
+}
+
+.mt38 {
+  margin-top: 38rpx;
+  padding-bottom: 38rpx;
+}
+
+.black_view {
+  height: 213rpx;
+}
+
+.editView {
+  height: 108rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addImg {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.reduceImg {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.pr10 {
+  padding-right: 10rpx;
+}
+
+.cover-view-button {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  color:#ffffff
+}

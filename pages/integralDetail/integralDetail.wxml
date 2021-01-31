@@ -1,0 +1,72 @@
+<view>
+  <view class="f20 f_w title">本次投递结果</view>
+
+  <view class="item1">
+
+    <view class="item1_view">
+      <view class="f17 f_w">投递种类</view>
+      <block wx:if="{{integralDetail.check_state=='待审核'}}">
+        <view class="f14 f_w color8">{{integralDetail.check_state}}</view>
+      </block>
+
+      <block wx:if="{{integralDetail.check_state=='已审核'}}">
+        <view class="f14 f_w color3">{{integralDetail.check_state}}</view>
+      </block>
+
+      <block wx:if="{{integralDetail.check_state=='未通过'}}">
+        <view class="f14 f_w color7">{{integralDetail.check_state}}</view>
+      </block>
+    </view>
+
+    <view class="item1_view1">
+      <view class="f15 imgView">
+        <image class="img" src="{{integralDetail.enable_icon}}" />
+
+        <block wx:if="{{integralDetail.rubbishType!=null}}">
+          <text class="pl10">{{integralDetail.rubbishType}}</text>
+        </block>
+      </view>
+
+      <block wx:if="{{integralDetail.weight!=0}}">
+        <view class="f15">{{integralDetail.weight}}/kg</view>
+      </block>
+
+      <block wx:else>
+        <view class="f15">{{integralDetail.big_count}}/个</view>
+      </block>
+    </view>
+
+    <view class="item1_view2">
+      <view class="f14 f_w">待入账积分</view>
+      <view class="color7">
+        <text class="f19 f_w pr">+{{integralDetail.integral}}</text>
+        <text class="f10">积分</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{integralDetail.check_state=='未通过'}}" class="item2">
+    <view class="f17 f_w orderInfo ml13">未通过说明</view>
+    <view class="f14 reasonDetail">{{integralDetail.refuse_reason}}</view>
+  </view>
+
+  <view class="item2">
+    <view class="f17 f_w orderInfo ml13">订单信息</view>
+
+    <view class="fcolor2 f14 data_tx">
+      <view>投放时间</view>
+      <view>{{integralDetail.deliveryTimeStr}}</view>
+    </view>
+
+    <view class="fcolor2 f14 data_tx">
+      <view>投放地址</view>
+      <view>{{integralDetail.community}}</view>
+    </view>
+
+    <view class="fcolor2 f14 data_tx pb20">
+      <view>订单编号</view>
+      <view>{{integralDetail.delivery_no}}</view>
+    </view>
+  </view>
+
+</view>

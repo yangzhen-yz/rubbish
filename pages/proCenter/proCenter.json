@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "问题中心",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+   "usingComponents":{
+     "v-problem-center":"/components/problemCenter",
+     "van-collapse": "../../miniprogram_npm/vant-weapp/dist/collapse/index",
+     "van-collapse-item": "../../miniprogram_npm/vant-weapp/dist/collapse-item/index"
+   }
+}
